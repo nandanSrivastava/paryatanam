@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Search, User } from "lucide-react";
+import { Menu, X, Search, User, Phone } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
@@ -28,87 +28,66 @@ export function Navbar() {
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         isScrolled
-          ? "bg-white/80 backdrop-blur-md shadow-sm py-3"
-          : "bg-transparent py-5",
+          ? "bg-white/95 backdrop-blur-lg shadow-luxury py-3"
+          : "bg-white/90 backdrop-blur-md shadow-md py-4",
       )}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-3 group">
             <img
-              src={
-                isScrolled
-                  ? "/paryatanam-logo-png.png"
-                  : "/Paryatanam LOGO White PNG.png"
-              }
+              src="/paryatanam-logo-png.png"
               alt="Paryatanam Logo"
-              className="h-10 w-auto"
+              className="h-8 sm:h-10 md:h-12 w-auto transition-all duration-300 group-hover:scale-110"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-10">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className={cn(
-                  "text-sm font-medium transition-colors hover:text-secondary",
-                  isScrolled ? "text-neutral-800" : "text-white/90",
-                )}
+                className="text-neutral-800 text-sm font-semibold transition-all hover:text-secondary relative group"
               >
                 {link.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all group-hover:w-full" />
               </Link>
             ))}
           </div>
 
           {/* Actions */}
-          <div className="hidden md:flex items-center gap-4">
-            <button
-              className={cn(
-                "p-2 rounded-full transition-colors",
-                isScrolled
-                  ? "hover:bg-neutral-100 text-neutral-800"
-                  : "hover:bg-white/10 text-white",
-              )}
+          <div className="hidden lg:flex items-center gap-4">
+            <Link
+              href="tel:+919000000000"
+              className="flex items-center gap-2 px-4 py-2 rounded-full transition-all font-medium text-sm hover:bg-neutral-100 text-neutral-800"
             >
-              <Search className="w-5 h-5" />
-            </button>
+              <Phone className="w-4 h-4" />
+              <span>+91 90000 00000</span>
+            </Link>
             <Button
-              variant={isScrolled ? "primary" : "outline"}
-              size="sm"
-              className={cn(
-                !isScrolled &&
-                  "border-white text-white hover:bg-white hover:text-primary",
-              )}
+              variant="primary"
+              size="md"
+              className="shadow-elegant hover:shadow-luxury transition-all hover:scale-105"
             >
               <User className="w-4 h-4 mr-2" />
-              Enquire
+              Enquire Now
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-neutral-800"
+            className="lg:hidden p-2.5 sm:p-3 rounded-lg transition-colors active:scale-95 text-neutral-800 hover:bg-neutral-100 active:bg-neutral-200"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
-              <X
-                className={cn(
-                  "w-6 h-6",
-                  isScrolled ? "text-neutral-800" : "text-white",
-                )}
-              />
+              <X className="w-5 h-5 sm:w-6 sm:h-6" />
             ) : (
-              <Menu
-                className={cn(
-                  "w-6 h-6",
-                  isScrolled ? "text-neutral-800" : "text-white",
-                )}
-              />
+              <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
             )}
           </button>
         </div>
@@ -116,19 +95,32 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white border-t border-neutral-100 shadow-lg p-4 flex flex-col gap-4 animate-in slide-in-from-top-5">
-          {navLinks.map((link) => (
+        <div className="lg:hidden fixed top-[72px] sm:top-[80px] left-0 right-0 bottom-0 bg-white/98 backdrop-blur-lg border-t border-neutral-200 shadow-luxury animate-fade-in overflow-y-auto">
+          <div className="container mx-auto px-4 py-6 flex flex-col gap-3">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-neutral-800 font-semibold py-4 px-4 hover:bg-primary/5 active:bg-primary/10 hover:text-primary transition-all rounded-xl text-base touch-manipulation"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {link.name}
+              </Link>
+            ))}
+            <hr className="border-neutral-200 my-2" />
             <Link
-              key={link.name}
-              href={link.href}
-              className="text-neutral-800 font-medium py-2 hover:text-primary transition-colors"
+              href="tel:+919000000000"
+              className="flex items-center gap-3 px-4 py-4 rounded-xl text-neutral-800 font-medium hover:bg-neutral-100 active:bg-neutral-200 transition-colors touch-manipulation"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              {link.name}
+              <Phone className="w-5 h-5 text-primary" />
+              <span className="text-base">+91 90000 00000</span>
             </Link>
-          ))}
-          <hr className="border-neutral-100" />
-          <Button className="w-full justify-center">Send Enquiry</Button>
+            <Button className="w-full justify-center shadow-elegant py-4 text-base mt-2 touch-manipulation active:scale-95">
+              <User className="w-4 h-4 mr-2" />
+              Send Enquiry
+            </Button>
+          </div>
         </div>
       )}
     </nav>

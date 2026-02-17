@@ -78,7 +78,7 @@ export function Testimonials() {
               </ul>
             </div>
 
-            <p className="mb-2 text-sm font-bold uppercase tracking-wider text-primary">
+            <p className="mb-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-primary">
               Exclusions
             </p>
             <ul className="space-y-2 text-sm text-neutral-700">
@@ -92,16 +92,16 @@ export function Testimonials() {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6 mb-8">
+        <div className="rounded-xl sm:rounded-2xl border border-amber-200 bg-amber-50 p-5 sm:p-6 mb-6 sm:mb-8">
           <p className="flex items-start gap-2 text-sm text-amber-900">
             <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
             <span>{twoDayTour?.importantNote}</span>
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="rounded-2xl bg-white border border-neutral-200 p-7 shadow-sm">
-            <h4 className="mb-4 text-xl font-serif font-bold text-primary">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+          <div className="rounded-xl sm:rounded-2xl bg-white border border-neutral-200 p-5 sm:p-6 md:p-7 shadow-sm">
+            <h4 className="mb-3 sm:mb-4 text-lg sm:text-xl font-serif font-bold text-primary">
               Know Before You Go
             </h4>
             <ul className="space-y-2 text-sm text-neutral-700">
@@ -114,11 +114,11 @@ export function Testimonials() {
             </ul>
           </div>
 
-          <div className="rounded-2xl bg-primary p-7 text-white shadow-sm">
-            <h4 className="mb-4 text-xl font-serif font-bold">
+          <div className="rounded-xl sm:rounded-2xl bg-primary p-5 sm:p-6 md:p-7 text-white shadow-sm">
+            <h4 className="mb-3 sm:mb-4 text-lg sm:text-xl font-serif font-bold">
               Additional Information
             </h4>
-            <p className="text-sm leading-7 text-white/90">
+            <p className="text-sm leading-6 sm:leading-7 text-white/90">
               Discover the spiritual and natural charm of Valmikinagar and the
               nearby Nepal border region, where sacred temples, lush forests,
               and peaceful river landscapes create a truly enriching experience.
@@ -126,7 +126,7 @@ export function Testimonials() {
               bridge walks, and a calming riverside stroll along the Gandak
               River.
             </p>
-            <p className="mt-3 text-sm leading-7 text-white/90">
+            <p className="mt-3 text-sm leading-6 sm:leading-7 text-white/90">
               This short but memorable journey blends devotion, nature, and
               relaxation with trusted transport, planned sightseeing, and
               comfortable stay options.
