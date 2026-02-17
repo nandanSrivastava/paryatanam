@@ -28,7 +28,7 @@ export function BookingCard({ tour }: BookingCardProps) {
         <div className="hidden sm:block absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full blur-2xl" />
         <div className="relative z-10">
           <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-3">
-            <span className="flex items-center gap-1.5 text-xs sm:text-sm bg-gradient-to-r from-amber-500 to-orange-500 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-white font-bold shadow-lg">
+            <span className="flex items-center gap-1.5 text-xs sm:text-sm bg-gradient-secondary px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-primary font-bold shadow-lg">
               <TrendingDown className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               {discount}% OFF
             </span>
@@ -116,8 +116,8 @@ export function BookingCard({ tour }: BookingCardProps) {
               key={item.label}
               className="flex items-center gap-2.5 sm:gap-3 text-sm sm:text-base text-gray-700 group hover:text-primary active:text-primary transition-colors"
             >
-              <div className="h-7 w-7 sm:h-8 sm:w-8 shrink-0 rounded-lg bg-green-50 flex items-center justify-center group-hover:bg-green-100 group-active:bg-green-100 transition-colors">
-                <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
+              <div className="h-7 w-7 sm:h-8 sm:w-8 shrink-0 rounded-lg bg-primary/5 flex items-center justify-center group-hover:bg-primary/10 group-active:bg-primary/10 transition-colors">
+                <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
               </div>
               <span className="font-medium">{item.label}</span>
             </div>

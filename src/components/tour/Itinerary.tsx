@@ -88,7 +88,7 @@ export function Itinerary({ days }: ItineraryProps) {
                           key={item}
                           className="flex items-start gap-2 text-sm text-gray-700"
                         >
-                          <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-green-600" />
+                          <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                           <span className="flex-1 min-w-0">{item}</span>
                         </li>
                       ))}

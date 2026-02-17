@@ -48,13 +48,13 @@ export function FeaturedTours() {
 
                 {/* Rating Badge */}
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs sm:text-sm font-bold text-primary shadow-md flex items-center gap-1.5 transition-transform duration-300 group-hover:scale-105">
-                  <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-500" />
+                  <Star className="w-3.5 h-3.5 fill-secondary text-secondary" />
                   {tour.rating}
                 </div>
 
                 {/* Popular Badge */}
                 {index === 0 && (
-                  <div className="absolute top-4 left-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white px-3 py-1.5 rounded-full text-[10px] sm:text-xs font-bold shadow-lg flex items-center gap-1.5">
+                  <div className="absolute top-4 left-4 bg-gradient-secondary text-primary px-3 py-1.5 rounded-full text-[10px] sm:text-xs font-bold shadow-lg flex items-center gap-1.5">
                     <Sparkles className="w-3 h-3" />
                     POPULAR
                   </div>

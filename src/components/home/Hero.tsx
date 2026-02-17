@@ -15,7 +15,7 @@ import { floatingDestinations } from "@/lib/floatingDestinations";
 
 export function Hero() {
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-blue-50 via-white to-green-50">
+    <div className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-primary/5 via-white to-secondary/10">
       {/* Background Pattern */}
       <div className="absolute inset-0 pattern-dots opacity-30" />
 
@@ -142,7 +142,7 @@ export function Hero() {
             </div>
 
             <div className="group rounded-2xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl active:scale-95 sm:hover:scale-105 transition-all duration-300">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-green-500/10 text-green-600 group-hover:bg-green-500 group-hover:text-white transition-all">
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-all">
                 <ShieldCheck className="h-6 w-6" />
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">

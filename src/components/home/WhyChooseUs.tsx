@@ -7,28 +7,28 @@ const features = [
     title: "Trusted & Safe",
     description:
       "Your safety is our priority. We partner with verified guides and secure accommodations.",
-    color: "from-green-500 to-emerald-600",
+    color: "from-primary to-primary/80",
   },
   {
     icon: Award,
     title: "Best Price Guarantee",
     description:
       "We offer the most competitive prices without compromising on quality or experience.",
-    color: "from-amber-500 to-orange-500",
+    color: "from-secondary to-primary",
   },
   {
     icon: Heart,
     title: "Curated Experiences",
     description:
       "Handpicked itineraries designed to create memories that last a lifetime.",
-    color: "from-pink-500 to-rose-600",
+    color: "from-primary/90 to-secondary",
   },
   {
     icon: Headphones,
     title: "24/7 Support",
     description:
       "Our dedicated support team is available around the clock to assist you.",
-    color: "from-blue-500 to-cyan-600",
+    color: "from-primary to-secondary/80",
   },
 ];
 

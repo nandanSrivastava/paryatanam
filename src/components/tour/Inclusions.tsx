@@ -25,7 +25,7 @@ export function Inclusions({
           {/* What's inside the package (day-wise) */}
           <div>
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-white shadow-lg">
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center text-white shadow-lg">
                 <Check className="w-6 h-6" />
               </div>
               <h3 className="text-2xl font-serif font-bold text-primary">
@@ -42,9 +42,9 @@ export function Inclusions({
                   {day.inclusions.map((item) => (
                     <li
                       key={item}
-                      className="flex items-start gap-3 text-base text-gray-700 group hover:bg-green-50 p-3 rounded-xl transition-all"
+                      className="flex items-start gap-3 text-base text-gray-700 group hover:bg-primary/5 p-3 rounded-xl transition-all"
                     >
-                      <Check className="w-5 h-5 text-green-600 shrink-0 mt-0.5 group-hover:scale-125 transition-transform" />
+                      <Check className="w-5 h-5 text-primary shrink-0 mt-0.5 group-hover:scale-125 transition-transform" />
                       <span className="leading-relaxed">{item}</span>
                     </li>
                   ))}
@@ -58,9 +58,9 @@ export function Inclusions({
                 {inclusions.map((item, index) => (
                   <li
                     key={index}
-                    className="flex items-start gap-3 text-base text-gray-700 group hover:bg-green-50 p-3 rounded-xl transition-all"
+                    className="flex items-start gap-3 text-base text-gray-700 group hover:bg-primary/5 p-3 rounded-xl transition-all"
                   >
-                    <Check className="w-5 h-5 text-green-600 shrink-0 mt-0.5 group-hover:scale-125 transition-transform" />
+                    <Check className="w-5 h-5 text-primary shrink-0 mt-0.5 group-hover:scale-125 transition-transform" />
                     <span className="leading-relaxed">{item}</span>
                   </li>
                 ))}
@@ -137,7 +137,7 @@ export function Inclusions({
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-8">
           <div className="bg-white rounded-3xl p-8 md:p-10 shadow-luxury border border-gray-100 hover:shadow-2xl transition-shadow duration-500">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-secondary to-primary flex items-center justify-center">
                 <Info className="w-5 h-5 text-white" />
               </div>
               <h3 className="text-2xl font-serif font-bold text-primary">
@@ -148,9 +148,9 @@ export function Inclusions({
               {knowBeforeYouGo?.map((item) => (
                 <li
                   key={item}
-                  className="flex items-start gap-3 text-base text-gray-700 hover:bg-purple-50 p-3 rounded-xl transition-all group"
+                  className="flex items-start gap-3 text-base text-gray-700 hover:bg-secondary/10 p-3 rounded-xl transition-all group"
                 >
-                  <div className="h-2 w-2 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 mt-2 shrink-0 group-hover:scale-150 transition-transform" />
+                  <div className="h-2 w-2 rounded-full bg-gradient-to-br from-secondary to-primary mt-2 shrink-0 group-hover:scale-150 transition-transform" />
                   <span className="leading-relaxed">{item}</span>
                 </li>
               ))}
