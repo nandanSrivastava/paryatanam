@@ -10,12 +10,13 @@ import { BookingCard } from "@/components/tour/BookingCard";
 import { Inclusions } from "@/components/tour/Inclusions";
 import { Itinerary } from "@/components/tour/Itinerary";
 
-export default function TourDetailPage({
+export default async function TourDetailPage({
   params,
 }: {
-  params: { slug: string };
+  params: { slug: string } | Promise<{ slug: string }>;
 }) {
-  const tour = getTourBySlug(params.slug);
+  const resolvedParams = await params;
+  const tour = getTourBySlug(resolvedParams.slug);
 
   if (!tour) {
     notFound();
@@ -109,6 +110,7 @@ export default function TourDetailPage({
                 stayDetails={tour.stayDetails}
                 knowBeforeYouGo={tour.knowBeforeYouGo}
                 importantNote={tour.importantNote}
+                itinerary={tour.itinerary}
               />
             </div>
           </div>

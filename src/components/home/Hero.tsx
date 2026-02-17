@@ -72,7 +72,7 @@ export function Hero() {
                 Sacred & Wild
               </span>
               <span className="block text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-script italic text-gray-700 mt-2">
-                of Valmikinagar
+                of Valmikinagar & Nepal
               </span>
             </h1>
 
@@ -86,77 +86,6 @@ export function Hero() {
               </span>
             </p>
           </div>
-
-          {/* Search Bar Section */}
-          <div
-            className="mb-12 sm:mb-16 max-w-4xl mx-auto animate-fade-in"
-            style={{ animationDelay: "0.3s" }}
-          >
-            <div className="bg-white rounded-2xl sm:rounded-3xl shadow-luxury p-4 sm:p-6 border border-gray-100">
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
-                {/* Destination */}
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-wider text-gray-600">
-                    Destination
-                  </label>
-                  <div className="relative">
-                    <MapPin className="absolute left-3 top-3.5 h-4 w-4 text-gray-400" />
-                    <input
-                      type="text"
-                      placeholder="Valmikinagar Circuit"
-                      className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-sm font-medium"
-                      defaultValue="Valmikinagar Circuit"
-                    />
-                  </div>
-                </div>
-
-                {/* Duration */}
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-wider text-gray-600">
-                    Package Type
-                  </label>
-                  <div className="relative">
-                    <Calendar className="absolute left-3 top-3.5 h-4 w-4 text-gray-400" />
-                    <select className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-sm font-medium appearance-none bg-white">
-                      <option>1 Day Package</option>
-                      <option>2 Day Package</option>
-                      <option>Custom Package</option>
-                    </select>
-                  </div>
-                </div>
-
-                {/* Travelers */}
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-wider text-gray-600">
-                    Travelers
-                  </label>
-                  <div className="relative">
-                    <Users className="absolute left-3 top-3.5 h-4 w-4 text-gray-400" />
-                    <select className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-sm font-medium appearance-none bg-white">
-                      <option>2-4 Travelers</option>
-                      <option>5-8 Travelers</option>
-                      <option>9+ Travelers</option>
-                    </select>
-                  </div>
-                </div>
-
-                {/* Search Button */}
-                <div className="mt-4 md:mt-0">
-                  <Link href="#featured-packages">
-                    <Button
-                      size="lg"
-                      className="w-full md:w-auto px-8 py-3.5 text-base font-bold shadow-luxury hover:shadow-xl hover:scale-105 active:scale-95 transition-all"
-                    >
-                      <Search className="mr-2 h-5 w-5" />
-                      <span className="hidden sm:inline">Search Packages</span>
-                      <span className="sm:hidden">Search</span>
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-
           {/* Quick Action Buttons */}
           <div
             className="flex flex-col sm:flex-row gap-4 justify-center mb-12 sm:mb-16 animate-fade-in"

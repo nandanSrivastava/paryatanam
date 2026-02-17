@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/Button";
 import {
   Calendar,
@@ -6,6 +7,7 @@ import {
   Sparkles,
   TrendingDown,
 } from "lucide-react";
+import { useState } from "react";
 import { TourPackage } from "@/lib/data";
 
 interface BookingCardProps {
@@ -16,6 +18,8 @@ export function BookingCard({ tour }: BookingCardProps) {
   const discount = Math.round(
     ((tour.originalPrice - tour.price) / tour.originalPrice) * 100,
   );
+  const [date, setDate] = useState<string>("");
+  const today = new Date().toISOString().split("T")[0];
 
   return (
     <div className="bg-white rounded-2xl sm:rounded-3xl shadow-xl sm:shadow-2xl border border-gray-100 overflow-hidden lg:sticky lg:top-24 hover:shadow-3xl transition-shadow duration-500">
@@ -59,8 +63,11 @@ export function BookingCard({ tour }: BookingCardProps) {
               <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
             </div>
             <input
-              type="text"
-              placeholder="Choose Date"
+              type="date"
+              aria-label="Choose travel date"
+              value={date}
+              min={today}
+              onChange={(e) => setDate(e.target.value)}
               className="w-full outline-none text-sm sm:text-base font-medium text-gray-700 placeholder-gray-400 bg-transparent"
             />
           </div>

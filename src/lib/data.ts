@@ -55,8 +55,8 @@ export const tourPackages: TourPackage[] = [
     rating: 4.8,
     reviews: 187,
     images: [
-      "https://images.unsplash.com/photo-1510744689289-9b5f4a6ea5b2?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1519377345644-937ef9754740?q=80&w=2070&auto=format&fit=crop",
+      "https://media2.thrillophilia.com/images/photos/000/373/536/original/1622526611_shutterstock_1594833985.jpg?w=753&h=450&dpr=1.5?q=80&w=2070&auto=format&fit=crop",
+      "https://valmikitigerreserve.com/wp-content/uploads/2022/08/c1-scaled.jpg?q=80&w=2070&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=2069&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1932&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1472396961693-142e6e269027?q=80&w=2070&auto=format&fit=crop",
@@ -144,7 +144,7 @@ export const tourPackages: TourPackage[] = [
     rating: 4.9,
     reviews: 264,
     images: [
-      "https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=2070&auto=format&fit=crop",
+      "https://tourism.bihar.gov.in/content/dam/bihar-tourism/images/category_a/west_champaran/valmiki_tiger_reserve/wildlife_west_champaran_category_a_valmiki_tiger_reserve_pic_02.jpg?q=80&w=2070&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=2070&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=2070&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070&auto=format&fit=crop",
@@ -257,6 +257,33 @@ export const whyChooseParyatanam = [
   "Comfortable stays with trusted hotel standards",
   "Seamless transport and guided experiences",
   "Affordable pricing with premium experiences",
+];
+
+export const testimonials = [
+  {
+    id: "t1",
+    name: "Anjali Sharma",
+    location: "Patna, India",
+    rating: 5,
+    text: "Amazing experience — well planned, comfortable stay, and truly memorable jungle safari. The guides were knowledgeable and friendly.",
+    date: "Jan 2025",
+  },
+  {
+    id: "t2",
+    name: "Rohit Verma",
+    location: "Gorakhpur, India",
+    rating: 5,
+    text: "A perfect short getaway. The temple visits and riverside walk were highlights. Highly recommended for families.",
+    date: "Mar 2025",
+  },
+  {
+    id: "t3",
+    name: "Meera K.",
+    location: "Lucknow, India",
+    rating: 4,
+    text: "Great value and friendly staff. Room service could be improved but overall a lovely trip.",
+    date: "Nov 2024",
+  },
 ];
 
 export function getTourBySlug(slug: string) {

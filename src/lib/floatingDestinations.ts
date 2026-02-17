@@ -151,4 +151,6 @@ export const floatingDestinations: Destination[] = [
     delay: "1.3s",
     size: "w-12 h-12 sm:w-14 sm:h-14",
   },
+  
+  
 ];
