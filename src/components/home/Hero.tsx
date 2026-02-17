@@ -19,7 +19,7 @@ export function Hero() {
       {/* Background Pattern */}
       <div className="absolute inset-0 pattern-dots opacity-30" />
 
-      {/* Floating Destination Cards (constrained to hero height) */}
+      {/* Floating Destination Cards (structured layout) */}
       <div className="absolute inset-x-0 top-0 h-[520px] sm:h-[640px] lg:h-[760px] pointer-events-none">
         <div className="relative w-full h-full">
           {floatingDestinations.map((destination, index) => (
@@ -31,12 +31,12 @@ export function Hero() {
               }}
             >
               <div
-                className={`relative ${destination.size} rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 border-2 border-white/30 ${
+                className={`relative ${destination.size} rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 border-2 border-white/40 ${
                   index % 2 === 0 ? "animate-float" : "animate-float-delayed"
                 }`}
                 style={{
                   animationDelay: destination.delay,
-                  animationDuration: index % 3 === 0 ? "8s" : "10s",
+                  animationDuration: index % 3 === 0 ? "12s" : "15s",
                 }}
               >
                 <img
@@ -44,9 +44,9 @@ export function Hero() {
                   alt={destination.name}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                {/* Floating badge effect */}
-                <div className="absolute -top-1 -right-1 w-3 h-3 bg-secondary rounded-full shadow-lg animate-pulse" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                {/* Subtle floating indicator */}
+                <div className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-secondary rounded-full shadow-md animate-pulse opacity-80" />
               </div>
             </div>
           ))}

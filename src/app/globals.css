@@ -86,13 +86,13 @@ body {
     transform: translateY(0px) translateX(0px) rotate(0deg);
   }
   25% {
-    transform: translateY(-15px) translateX(5px) rotate(1deg);
+    transform: translateY(-12px) translateX(3px) rotate(0.8deg);
   }
   50% {
-    transform: translateY(-8px) translateX(-3px) rotate(-0.5deg);
+    transform: translateY(-6px) translateX(-2px) rotate(-0.4deg);
   }
   75% {
-    transform: translateY(-12px) translateX(2px) rotate(0.5deg);
+    transform: translateY(-10px) translateX(1px) rotate(0.3deg);
   }
 }
 
@@ -102,10 +102,10 @@ body {
     transform: translateY(0px) translateX(0px) rotate(0deg);
   }
   33% {
-    transform: translateY(-10px) translateX(-4px) rotate(-1deg);
+    transform: translateY(-8px) translateX(-3px) rotate(-0.8deg);
   }
   66% {
-    transform: translateY(-18px) translateX(6px) rotate(1.5deg);
+    transform: translateY(-14px) translateX(4px) rotate(1.2deg);
   }
 }
 
