@@ -19,35 +19,39 @@ export function Hero() {
       {/* Background Pattern */}
       <div className="absolute inset-0 pattern-dots opacity-30" />
 
-      {/* Floating Destination Cards */}
-      {floatingDestinations.map((destination, index) => (
-        <div
-          key={destination.name}
-          className={`absolute ${destination.position} group cursor-pointer z-20`}
-          style={{
-            transform: "translateY(var(--navbar-height))",
-          }}
-        >
-          <div
-            className={`relative ${destination.size} rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 border-2 border-white/30 ${
-              index % 2 === 0 ? "animate-float" : "animate-float-delayed"
-            }`}
-            style={{
-              animationDelay: destination.delay,
-              animationDuration: index % 3 === 0 ? "8s" : "10s",
-            }}
-          >
-            <img
-              src={destination.image}
-              alt={destination.name}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-            {/* Floating badge effect */}
-            <div className="absolute -top-1 -right-1 w-3 h-3 bg-secondary rounded-full shadow-lg animate-pulse" />
-          </div>
+      {/* Floating Destination Cards (constrained to hero height) */}
+      <div className="absolute inset-x-0 top-0 h-[520px] sm:h-[640px] lg:h-[760px] pointer-events-none">
+        <div className="relative w-full h-full">
+          {floatingDestinations.map((destination, index) => (
+            <div
+              key={destination.name}
+              className={`absolute ${destination.position} group cursor-pointer z-20 pointer-events-auto`}
+              style={{
+                transform: "translateY(var(--navbar-height))",
+              }}
+            >
+              <div
+                className={`relative ${destination.size} rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 border-2 border-white/30 ${
+                  index % 2 === 0 ? "animate-float" : "animate-float-delayed"
+                }`}
+                style={{
+                  animationDelay: destination.delay,
+                  animationDuration: index % 3 === 0 ? "8s" : "10s",
+                }}
+              >
+                <img
+                  src={destination.image}
+                  alt={destination.name}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                {/* Floating badge effect */}
+                <div className="absolute -top-1 -right-1 w-3 h-3 bg-secondary rounded-full shadow-lg animate-pulse" />
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
 
       {/* Large decorative background elements */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl" />
