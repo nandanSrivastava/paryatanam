@@ -1,94 +1,69 @@
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { Landmark, Trees, Waves, Camera } from "lucide-react";
+import { brandContent } from "@/lib/data";
 
-const destinations = [
-    {
-        name: "Ladakh",
-        image: "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=2070&auto=format&fit=crop",
-        count: "25+ Tours",
-        colSpan: "md:col-span-2 md:row-span-2",
-    },
-    {
-        name: "Kerala",
-        image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1932&auto=format&fit=crop",
-        count: "18+ Tours",
-        colSpan: "md:col-span-1 md:row-span-1",
-    },
-    {
-        name: "Rajasthan",
-        image: "https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=2070&auto=format&fit=crop",
-        count: "30+ Tours",
-        colSpan: "md:col-span-1 md:row-span-1",
-    },
-    {
-        name: "Bali",
-        image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=2038&auto=format&fit=crop",
-        count: "12+ Tours",
-        colSpan: "md:col-span-1 md:row-span-1",
-    },
-    {
-        name: "Dubai",
-        image: "https://images.unsplash.com/photo-1512453979798-5ea904ac2294?q=80&w=2070&auto=format&fit=crop",
-        count: "15+ Tours",
-        colSpan: "md:col-span-1 md:row-span-1",
-    },
+const circuitHighlights = [
+  {
+    icon: Landmark,
+    title: "Spiritual & Cultural Visits",
+    description:
+      "Maa Nardevi Temple, Jatashankar Dham, Kawaleshwar Dham, Valmiki Ashram Dham, Triveni Dham, and Gajendra Moksha Dham.",
+  },
+  {
+    icon: Trees,
+    title: "Jungle Safari Experience",
+    description:
+      "Witness Valmiki forest flora and wildlife in a guided safari through eco-sensitive landscapes.",
+  },
+  {
+    icon: Waves,
+    title: "Riverside Peace",
+    description:
+      "Enjoy Gandak river views, fresh breeze, sunset walks, and relaxing natural surroundings.",
+  },
+  {
+    icon: Camera,
+    title: "Scenic Bridges & Viewpoints",
+    description:
+      "Visit Hanging Bridge and Kawaleshwar Jhula for panoramic nature views and photography moments.",
+  },
 ];
 
 export function DestinationsGrid() {
-    return (
-        <section className="py-20 bg-neutral-50 px-4 md:px-6">
-            <div className="container mx-auto">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-12">
-                    <div>
-                        <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-3">
-                            Top Destinations
-                        </h2>
-                        <p className="text-neutral-600 max-w-lg">
-                            Explore our most popular destinations, handpicked for their unique culture, stunning landscapes, and unforgettable experiences.
-                        </p>
-                    </div>
-                    <Link
-                        href="/destinations"
-                        className="hidden md:flex items-center gap-2 text-primary font-medium hover:text-secondary transition-colors mt-4 md:mt-0"
-                    >
-                        View All Destinations <ArrowRight className="w-4 h-4" />
-                    </Link>
-                </div>
+  return (
+    <section className="py-20 bg-neutral-50 px-4 md:px-6">
+      <div className="container mx-auto">
+        <div className="mx-auto mb-12 max-w-4xl text-center">
+          <span className="text-sm font-bold uppercase tracking-wider text-secondary">
+            Indo-Nepal Tour Packages
+          </span>
+          <h2 className="mt-3 text-3xl font-serif font-bold text-primary md:text-5xl">
+            Valmikinagar – Nepal Border Circuit
+          </h2>
+          <p className="mt-5 text-neutral-600 md:text-lg">
+            {brandContent.journeyDescription}
+          </p>
+          <p className="mt-3 text-neutral-600 md:text-lg">
+            {brandContent.journeyDescription2}
+          </p>
+        </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 h-auto md:h-[600px]">
-                    {destinations.map((dest, index) => (
-                        <Link
-                            href={`/destinations/${dest.name.toLowerCase()}`}
-                            key={dest.name}
-                            className={`group relative overflow-hidden rounded-2xl block ${dest.colSpan}`}
-                        >
-                            <div
-                                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                                style={{ backgroundImage: `url(${dest.image})` }}
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
-
-                            <div className="absolute bottom-0 left-0 p-6 text-white w-full">
-                                <span className="text-xs font-bold uppercase tracking-wider text-secondary mb-1 block">
-                                    {dest.count}
-                                </span>
-                                <h3 className="text-2xl font-serif font-bold group-hover:translate-x-2 transition-transform duration-300">
-                                    {dest.name}
-                                </h3>
-                            </div>
-                        </Link>
-                    ))}
-                </div>
-
-                <div className="mt-8 text-center md:hidden">
-                    <Link
-                        href="/destinations"
-                        className="inline-flex items-center gap-2 text-primary font-medium hover:text-secondary transition-colors"
-                    >
-                        View All Destinations <ArrowRight className="w-4 h-4" />
-                    </Link>
-                </div>
-            </div>
-        </section>
-    );
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          {circuitHighlights.map((item) => (
+            <article
+              key={item.title}
+              className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+            >
+              <item.icon className="mb-3 h-8 w-8 text-primary" />
+              <h3 className="mb-2 text-xl font-serif font-bold text-primary">
+                {item.title}
+              </h3>
+              <p className="text-sm leading-7 text-neutral-600">
+                {item.description}
+              </p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }

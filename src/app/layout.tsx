@@ -18,8 +18,9 @@ const dancing = Dancing_Script({
 });
 
 export const metadata: Metadata = {
-  title: "Paryatanam - Experience the World",
-  description: "Your gateway to unforgettable journeys. Book tours, explore destinations, and make memories with Paryatanam.",
+  title: "Paryatanam | Indo-Nepal Spiritual & Nature Tours",
+  description:
+    "Explore Valmikinagar and Nepal border circuits with curated temple trails, jungle safaris, river experiences, and comfortable stays.",
 };
 
 export default function RootLayout({

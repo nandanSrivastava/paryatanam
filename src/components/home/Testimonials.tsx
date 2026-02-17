@@ -1,79 +1,139 @@
-import { Star, Quote } from "lucide-react";
-import Image from "next/image"; // Note: Using Image component but src will be external URL for now
-
-const testimonials = [
-    {
-        id: 1,
-        name: "Aarav Patel",
-        role: "Adventure Enthusiast",
-        image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=1974&auto=format&fit=crop",
-        content: "Paryatanam planned the perfect Ladakh trip for us. The guides were knowledgeable, and the arrangements were top-notch. Highly recommended!",
-        rating: 5,
-    },
-    {
-        id: 2,
-        name: "Sneha Reddy",
-        role: "Solo Traveler",
-        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1974&auto=format&fit=crop",
-        content: "Traveling solo can be daunting, but Paryatanam made me feel safe and supported throughout my Kerala trip. An unforgettable experience!",
-        rating: 5,
-    },
-    {
-        id: 3,
-        name: "Rahul & Meera",
-        role: "Honeymooners",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop",
-        content: "Our honeymoon in Maldives was magical, thanks to the meticulous planning by the team. Every detail was taken care of.",
-        rating: 4,
-    },
-];
+import { AlertCircle, CheckCircle2, Info, XCircle } from "lucide-react";
+import { tourPackages } from "@/lib/data";
 
 export function Testimonials() {
-    return (
-        <section className="py-20 bg-neutral-50 px-4 md:px-6">
-            <div className="container mx-auto">
-                <div className="text-center mb-16">
-                    <span className="text-secondary font-bold tracking-wider uppercase text-sm">Testimonials</span>
-                    <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mt-2">What Travelers Say</h2>
-                    <div className="w-24 h-1 bg-secondary mx-auto mt-6 rounded-full" />
-                </div>
+  const oneDayTour = tourPackages.find(
+    (tour) => tour.id === "valmikinagar-one-day",
+  );
+  const twoDayTour = tourPackages.find(
+    (tour) => tour.id === "valmikinagar-nepal-two-day",
+  );
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {testimonials.map((testimonial) => (
-                        <div key={testimonial.id} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow relative">
-                            <Quote className="absolute top-8 right-8 text-secondary/20 w-10 h-10" />
+  return (
+    <section
+      id="know-before-you-go"
+      className="py-20 bg-neutral-50 px-4 md:px-6"
+    >
+      <div className="container mx-auto">
+        <div className="text-center mb-16">
+          <span className="text-secondary font-bold tracking-wider uppercase text-sm">
+            Tour Information
+          </span>
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mt-2">
+            Know Before You Go
+          </h2>
+          <div className="w-24 h-1 bg-secondary mx-auto mt-6 rounded-full" />
+        </div>
 
-                            <div className="flex items-center gap-1 mb-6">
-                                {[...Array(5)].map((_, i) => (
-                                    <Star
-                                        key={i}
-                                        className={`w-4 h-4 ${i < testimonial.rating ? "fill-yellow-400 text-yellow-400" : "fill-gray-200 text-gray-200"}`}
-                                    />
-                                ))}
-                            </div>
-
-                            <p className="text-neutral-600 mb-8 leading-relaxed italic">
-                                "{testimonial.content}"
-                            </p>
-
-                            <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 rounded-full overflow-hidden relative">
-                                    {/* Using img tag for simplicity with external URLs in this context, or Next Image if domains configured */}
-                                    <img
-                                        src={testimonial.image}
-                                        alt={testimonial.name}
-                                        className="object-cover w-full h-full"
-                                    />
-                                </div>
-                                <div>
-                                    <h4 className="font-bold text-primary">{testimonial.name}</h4>
-                                    <span className="text-xs text-neutral-500 uppercase tracking-wide">{testimonial.role}</span>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+          <div className="rounded-2xl border border-neutral-200 bg-white p-7 shadow-sm">
+            <h3 className="mb-5 text-2xl font-serif font-bold text-primary">
+              What’s inside the package?
+            </h3>
+            <div className="space-y-6">
+              <div>
+                <p className="mb-2 text-sm font-bold uppercase tracking-wider text-primary">
+                  Day 1 – Valmikinagar Experience
+                </p>
+                <ul className="space-y-2 text-sm text-neutral-700">
+                  {oneDayTour?.itinerary?.[0]?.inclusions.map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-green-600" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p className="mb-2 text-sm font-bold uppercase tracking-wider text-primary">
+                  Day 2 – Nepal Border Exploration
+                </p>
+                <ul className="space-y-2 text-sm text-neutral-700">
+                  {twoDayTour?.itinerary?.[1]?.inclusions.map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-green-600" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-        </section>
-    );
+          </div>
+
+          <div className="rounded-2xl border border-neutral-200 bg-white p-7 shadow-sm">
+            <h3 className="mb-5 text-2xl font-serif font-bold text-primary">
+              Exclusions & Stay Details
+            </h3>
+            <div className="mb-5">
+              <p className="mb-2 text-sm font-bold uppercase tracking-wider text-primary">
+                Stay (Two-Day Package)
+              </p>
+              <ul className="space-y-2 text-sm text-neutral-700">
+                {twoDayTour?.stayDetails?.map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <Info className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <p className="mb-2 text-sm font-bold uppercase tracking-wider text-primary">
+              Exclusions
+            </p>
+            <ul className="space-y-2 text-sm text-neutral-700">
+              {twoDayTour?.exclusions.map((item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <XCircle className="mt-0.5 h-4 w-4 shrink-0 text-red-600" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6 mb-8">
+          <p className="flex items-start gap-2 text-sm text-amber-900">
+            <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
+            <span>{twoDayTour?.importantNote}</span>
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="rounded-2xl bg-white border border-neutral-200 p-7 shadow-sm">
+            <h4 className="mb-4 text-xl font-serif font-bold text-primary">
+              Know Before You Go
+            </h4>
+            <ul className="space-y-2 text-sm text-neutral-700">
+              {twoDayTour?.knowBeforeYouGo.map((note) => (
+                <li key={note} className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                  <span>{note}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="rounded-2xl bg-primary p-7 text-white shadow-sm">
+            <h4 className="mb-4 text-xl font-serif font-bold">
+              Additional Information
+            </h4>
+            <p className="text-sm leading-7 text-white/90">
+              Discover the spiritual and natural charm of Valmikinagar and the
+              nearby Nepal border region, where sacred temples, lush forests,
+              and peaceful river landscapes create a truly enriching experience.
+              Along with spiritual exploration, enjoy jungle safari, hanging
+              bridge walks, and a calming riverside stroll along the Gandak
+              River.
+            </p>
+            <p className="mt-3 text-sm leading-7 text-white/90">
+              This short but memorable journey blends devotion, nature, and
+              relaxation with trusted transport, planned sightseeing, and
+              comfortable stay options.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }

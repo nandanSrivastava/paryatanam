@@ -1,72 +1,264 @@
-export const exploreJapanTour = {
-    id: "explore-japan",
-    title: "Explore Japan | Journey to the Cultural Treasure Trove",
-    location: "Japan",
-    duration: "6 Days / 5 Nights",
-    price: 189000,
-    originalPrice: 210000,
-    rating: 4.9,
-    reviews: 54,
-    description: "Witness Japan's vibrant mix of tradition and modernity, from Tokyo’s bustling streets and cutting-edge technology to Osaka’s rich cultural heritage. Soar above Hakone on the iconic Ropeway ride and take in panoramic views of Mount Fuji, lush valleys, and the serene Lake Ashi.",
+export interface DayPlan {
+  day: number;
+  title: string;
+  schedule: Array<{ time: string; activity: string }>;
+  inclusions: string[];
+}
+
+export interface TourPackage {
+  id: string;
+  slug: string;
+  title: string;
+  subtitle: string;
+  location: string;
+  duration: string;
+  minPeople: string;
+  price: number;
+  originalPrice: number;
+  rating: number;
+  reviews: number;
+  images: string[];
+  description: string;
+  highlights: string[];
+  inclusions: string[];
+  exclusions: string[];
+  stayDetails?: string[];
+  knowBeforeYouGo: string[];
+  importantNote: string;
+  itinerary: DayPlan[];
+}
+
+export const brandContent = {
+  tagline:
+    "Adventure in Every Step, Culture in Every Story, Nature in Every Breath.",
+  intro:
+    "Explore rich traditions, hidden destinations, and unforgettable journeys.",
+  journeyTitle: "India + Nepal — One Journey, Endless Experiences",
+  journeyDescription:
+    "Discover soulful spiritual trails, lush jungles, and peaceful riversides with Paryatanam’s Indo-Nepal tours, specially curated around Valmikinagar, Nepal border regions, and Hole Nepal.",
+  journeyDescription2:
+    "From sacred temples to thrilling jungle safaris, every journey is designed to give you culture, nature, and comfort in one unforgettable experience.",
+};
+
+export const tourPackages: TourPackage[] = [
+  {
+    id: "valmikinagar-one-day",
+    slug: "valmikinagar-one-day-package",
+    title: "Valmikinagar One-Day Package",
+    subtitle:
+      "A perfect short getaway combining spirituality, nature, and light adventure.",
+    location: "Valmikinagar – Nepal Border Circuit",
+    duration: "1 Day",
+    minPeople: "Min. 4-5 persons",
+    price: 1999,
+    originalPrice: 2499,
+    rating: 4.8,
+    reviews: 187,
     images: [
-        "https://images.unsplash.com/photo-1528360983277-13d9012356ee?q=80&w=2070&auto=format&fit=crop", // Tokyo Tower / Street
-        "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=2070&auto=format&fit=crop", // Kyoto Temple
-        "https://images.unsplash.com/photo-1492571350019-22de08371fd3?q=80&w=2053&auto=format&fit=crop", // Cherry Blossoms
-        "https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?q=80&w=2070&auto=format&fit=crop", // Mount Fuji
-        "https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=2070&auto=format&fit=crop", // Street Food / Market
+      "https://images.unsplash.com/photo-1510744689289-9b5f4a6ea5b2?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1519377345644-937ef9754740?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=2069&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1932&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1472396961693-142e6e269027?q=80&w=2070&auto=format&fit=crop",
     ],
+    description:
+      "Discover the spiritual and natural charm of Valmikinagar, where sacred temples, lush forests, and peaceful river landscapes create a truly enriching one-day experience.",
     highlights: [
-        "Witness Japan's vibrant mix of tradition and modernity, from Tokyo’s bustling streets to Osaka’s heritage.",
-        "Soar above Hakone on the iconic Ropeway ride and take in panoramic views of Mount Fuji.",
-        "Explore Todaiji’s Great Buddha Hall, home to the world’s largest bronze Buddha statue.",
-        "Pay your respects at Kinkaku-ji, the iconic Buddhist temple in Kyoto.",
-        "Soak in the futuristic allure of Odaiba District with its Rainbow Bridge.",
-    ],
-    itinerary: [
-        {
-            day: 1,
-            title: "Arrival in Tokyo | Welcome to the Land of Rising Sun",
-            description: "Upon arrival at Narita/Haneda Airport, meet our representative and get transferred to your hotel. Spend the rest of the day at leisure exploring the vibrant streets of Tokyo.",
-        },
-        {
-            day: 2,
-            title: "Tokyo Sightseeing | Witness the Blend of Tradition & Modernity",
-            description: "Visit the Imperial Palace East Garden, Asakusa Kannon Temple, and Nakamise Shopping Street. Later, witness the panoramic views from Tokyo Skytree.",
-        },
-        {
-            day: 3,
-            title: "Trip to Hakone | A Glimpse of Mount Fuji",
-            description: "Travel to Hakone. Enjoy a cruise on Lake Ashi and take the Hakone Ropeway for breathtaking views of Mount Fuji and the volcanic Owakudani Valley.",
-        },
-        {
-            day: 4,
-            title: "Transfer to Osaka | The Kitchen of Japan",
-            description: "Take the Shinkansen (Bullet Train) to Osaka. Visit Osaka Castle and Dotonbori district, famous for its neon lights and street food.",
-        },
-        {
-            day: 5,
-            title: "Kyoto & Nara Day Tour | Dive into Cultural Heritage",
-            description: "Visit Kinkaku-ji (Golden Pavilion) and Fushimi Inari Shrine in Kyoto. Proceed to Nara to see the Great Buddha at Todaiji Temple and the friendly deer at Nara Park.",
-        },
-        {
-            day: 6,
-            title: "Departure | Sayonara Japan",
-            description: "Check out from the hotel and get transferred to the airport for your flight back home with wonderful memories.",
-        },
+      "Maa Nardevi Temple, Jatashankar Dham, Kawaleshwar Dham, and Valmiki Ashram Dham visits",
+      "Jungle Safari inside the Valmiki forest area",
+      "Peaceful Gandak river-side experiences with a scenic walk",
+      "Hanging Bridge and Kawaleshwar Jhula viewpoints",
+      "Eco-Park relaxation with local sightseeing and transfers",
     ],
     inclusions: [
-        "Accommodation in 4-star hotels",
-        "Daily Breakfast",
-        "All transfers and sightseeing by private/shared vehicle",
-        "English speaking guide",
-        "Entrance fees to monuments",
-        "Bullet Train tickets (Tokyo to Osaka)",
+      "Pickup & drop as per itinerary",
+      "Meals included",
+      "Spiritual and cultural sightseeing",
+      "Jungle safari experience",
+      "Hanging Bridge visit",
+      "Kawaleshwar Jhula and Eco-Park visit",
+      "Riverside walk along Gandak River",
+      "All local transfers and sightseeing by vehicle",
+      "Driver allowance, fuel, and parking charges",
     ],
     exclusions: [
-        "International Airfare",
-        "Visa Charges",
-        "Lunch and Dinner",
-        "Personal Expenses",
-        "Travel Insurance",
+      "Any personal expenses (shopping, tips, laundry, phone calls, etc.)",
+      "Any meals not mentioned in inclusions",
+      "Entry fees or activity tickets unless specified",
+      "Camera fees at sightseeing places (if applicable)",
+      "Travel insurance",
+      "Anything not mentioned under inclusions",
     ],
-};
+    knowBeforeYouGo: [
+      "Prices may vary during peak seasons, long weekends, and festivals.",
+      "Valid government ID proof is mandatory for all travelers.",
+      "Timely reporting and punctual departures are required for full sightseeing coverage.",
+      "The route passes through eco-sensitive forest zones; avoid littering.",
+      "Carry comfortable clothing, walking shoes, sunscreen, and drinking water.",
+      "Photography at religious places or forest areas may be restricted.",
+      "Maintain silence and decorum at temples and spiritual sites.",
+      "The itinerary may be modified due to weather, forest regulations, or local circumstances.",
+    ],
+    importantNote:
+      "Boat rides on Gandak River are subject to weather and government regulations.",
+    itinerary: [
+      {
+        day: 1,
+        title: "Valmikinagar Experience",
+        schedule: [
+          { time: "Morning", activity: "Pickup, welcome, and breakfast" },
+          { time: "Morning", activity: "Visit Maa Nardevi Temple" },
+          {
+            time: "Late Morning",
+            activity: "Jatashankar Dham and Kawaleshwar Dham darshan",
+          },
+          { time: "Noon", activity: "Valmiki Ashram Dham visit" },
+          { time: "Afternoon", activity: "Lunch" },
+          { time: "Afternoon", activity: "Jungle Safari experience" },
+          { time: "Evening", activity: "Hanging Bridge and Kawaleshwar Jhula" },
+          { time: "Evening", activity: "Eco-Park leisure time" },
+          { time: "Sunset", activity: "Riverside walk along Gandak River" },
+          { time: "Night", activity: "Drop-off" },
+        ],
+        inclusions: [
+          "Temple circuit sightseeing",
+          "Jungle safari",
+          "Hanging Bridge + Kawaleshwar Jhula",
+          "Eco-Park and riverside walk",
+          "Transfers, fuel, and parking",
+        ],
+      },
+    ],
+  },
+  {
+    id: "valmikinagar-nepal-two-day",
+    slug: "valmikinagar-nepal-two-day-package",
+    title: "Valmikinagar – Nepal Two-Day Package",
+    subtitle:
+      "A thoughtfully designed overnight journey blending spirituality, heritage, comfort, and scenic beauty near the Indo-Nepal border.",
+    location: "Valmikinagar – Nepal Border Circuit",
+    duration: "2 Days / 1 Night",
+    minPeople: "Min. 2 persons",
+    price: 4999,
+    originalPrice: 5999,
+    rating: 4.9,
+    reviews: 264,
+    images: [
+      "https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2070&auto=format&fit=crop",
+    ],
+    description:
+      "Discover the spiritual and natural charm of Valmikinagar and the nearby Nepal border region, where sacred temples, lush forests, and peaceful riversides create a complete short escape with stay, meals, and guided sightseeing.",
+    highlights: [
+      "Temple and heritage visits across Valmikinagar and nearby Nepal border regions",
+      "Triveni Dham, Gajendra Moksha Dham, and Shish Mahal exploration",
+      "Jungle safari and Hanging Bridge experiences",
+      "1-night resort/luxury hotel stay with meal plan",
+      "Affordable premium package with seamless transport",
+    ],
+    inclusions: [
+      "1 night stay in Resort / Luxury Hotel (3-Star equivalent standards)",
+      "Breakfast, lunch, and dinner as per package",
+      "Pickup and return drop as per itinerary",
+      "Maa Nardevi Temple, Jatashankar Dham, Kawaleshwar Dham, and Valmiki Ashram Dham visits",
+      "Triveni Dham, Gajendra Moksha Dham, and Shish Mahal visit (Nepal border region)",
+      "Jungle safari experience",
+      "Hanging Bridge and local sightseeing",
+      "All local transfers and sightseeing by vehicle",
+      "Driver allowance, fuel, and parking charges",
+    ],
+    exclusions: [
+      "Any personal expenses (shopping, tips, laundry, phone calls, etc.)",
+      "Any meals not mentioned in inclusions",
+      "Entry fees or activity tickets unless specified",
+      "Camera fees at sightseeing places (if applicable)",
+      "Travel insurance",
+      "Anything not mentioned under inclusions",
+    ],
+    stayDetails: [
+      "1 night stay in Resort / Luxury Hotel (3-Star equivalent standards)",
+      "Comfortable rooms with modern amenities",
+      "Dinner included as per selected package",
+    ],
+    knowBeforeYouGo: [
+      "Prices may vary during peak seasons, long weekends, and festivals. Send an enquiry for exact cost.",
+      "Valid government ID proof is mandatory at booking and during the tour.",
+      "Indian citizens should carry valid ID for Nepal border visits.",
+      "Timely reporting and punctual departures are important to cover all sightseeing.",
+      "Avoid littering in forest and eco-sensitive zones.",
+      "Carry comfortable clothing, walking shoes, sunscreen, and drinking water.",
+      "Photography at religious places or forest areas may be restricted by local authorities.",
+      "Hotel check-in and check-out timings are as per hotel policy and availability.",
+      "Early check-in or late check-out may be chargeable.",
+      "The itinerary may be modified due to weather conditions, forest regulations, or local circumstances.",
+      "Personal expenses and services not listed in inclusions are excluded.",
+    ],
+    importantNote:
+      "Itinerary flow can change based on weather, forest permissions, and local safety advisories.",
+    itinerary: [
+      {
+        day: 1,
+        title: "Valmikinagar Experience",
+        schedule: [
+          { time: "Morning", activity: "Pickup and breakfast" },
+          { time: "Morning", activity: "Milk tea / milk coffee" },
+          { time: "Morning", activity: "Jungle safari" },
+          {
+            time: "Morning",
+            activity:
+              "Temple visits: Maa Nardevi, Jatashankar, and Kawaleshwar",
+          },
+          { time: "Noon", activity: "Valmiki Ashram Dham" },
+          { time: "Afternoon", activity: "Lunch" },
+          { time: "Evening", activity: "Hanging Bridge visit" },
+          {
+            time: "Night",
+            activity:
+              "Check-in at Resort / Luxury Hotel (3-Star equivalent) and dinner",
+          },
+        ],
+        inclusions: [
+          "Pickup, breakfast, lunch, and dinner",
+          "Temple circuit + Valmiki Ashram",
+          "Jungle safari and Hanging Bridge",
+          "Hotel stay",
+          "Transfers, fuel, and parking",
+        ],
+      },
+      {
+        day: 2,
+        title: "Nepal Border Exploration",
+        schedule: [
+          { time: "Morning", activity: "Breakfast" },
+          { time: "Morning", activity: "Triveni Dham visit" },
+          { time: "Late Morning", activity: "Gajendra Moksha Dham" },
+          { time: "Afternoon", activity: "Lunch" },
+          { time: "Afternoon", activity: "Shish Mahal exploration" },
+          { time: "Evening", activity: "Hanging Bridge and sightseeing" },
+          { time: "Night", activity: "Return drop" },
+        ],
+        inclusions: [
+          "Breakfast and lunch",
+          "Nepal border spiritual and heritage sightseeing",
+          "Hanging Bridge experience",
+          "Return transfer",
+          "Driver allowance, fuel, and parking",
+        ],
+      },
+    ],
+  },
+];
+
+export const whyChooseParyatanam = [
+  "Curated Indo-Nepal spiritual and nature circuits",
+  "Comfortable stays with trusted hotel standards",
+  "Seamless transport and guided experiences",
+  "Affordable pricing with premium experiences",
+];
+
+export function getTourBySlug(slug: string) {
+  return tourPackages.find((tour) => tour.slug === slug);
+}
