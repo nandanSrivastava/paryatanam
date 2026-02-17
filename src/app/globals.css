@@ -20,6 +20,13 @@
   --color-neutral-900: #111827;
 }
 
+/* Reduce navbar height variable on small screens so offsets match */
+@media (max-width: 767px) {
+  :root {
+    --navbar-height: 60px;
+  }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

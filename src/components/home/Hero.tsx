@@ -19,8 +19,8 @@ export function Hero() {
       {/* Background Pattern */}
       <div className="absolute inset-0 pattern-dots opacity-30" />
 
-      {/* Floating Destination Cards (structured layout) */}
-      <div className="absolute inset-x-0 top-0 h-[520px] sm:h-[640px] lg:h-[760px] pointer-events-none">
+      {/* Floating Destination Cards (desktop & tablet only to keep mobile clean) */}
+      <div className="hidden md:block absolute inset-x-0 top-0 h-[520px] sm:h-[640px] lg:h-[760px] pointer-events-none">
         <div className="relative w-full h-full">
           {floatingDestinations.map((destination, index) => (
             <div
@@ -57,8 +57,8 @@ export function Hero() {
       <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-secondary/15 to-transparent rounded-full blur-3xl" />
 
-      <div className="relative z-10 container mx-auto flex min-h-screen flex-col justify-center px-4 sm:px-6 py-16 sm:py-24">
-        <div className="max-w-6xl mx-auto text-center">
+      <div className="relative z-10 container mx-auto flex min-h-screen flex-col justify-center px-6 sm:px-8 pt-[var(--navbar-height)] pb-12 sm:pb-24">
+        <div className="max-w-3xl sm:max-w-6xl mx-auto text-center">
           {/* Main Hero Content */}
           <div className="mb-8 sm:mb-12 animate-fade-in-up">
             <div className="mb-4 sm:mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-primary shadow-lg">
