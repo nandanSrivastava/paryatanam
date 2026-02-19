@@ -62,7 +62,7 @@ export function Navbar() {
           <div className="hidden lg:flex items-center gap-4">
             <Link
               href="tel:+919288202060"
-              className="flex items-center gap-2 px-4 py-2 rounded-full transition-all font-medium text-sm hover:bg-neutral-100 text-neutral-800"
+              className="flex items-center gap-2 px-4 py-2 rounded-full transition-all font-medium text-sm hover:bg-neutral-100 text-neutral-800 outline-1"
             >
               <Phone className="w-4 h-4" />
               <span>+91 9288202060</span>
