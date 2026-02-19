@@ -1,7 +1,23 @@
-import { Star, User } from "lucide-react";
+import { User } from "lucide-react";
 import { testimonials } from "@/lib/data";
 
 export function Testimonials() {
+  // simple filled star SVG using currentColor so Tailwind text color applies
+  function FilledStar(props: { className?: string }) {
+    return (
+      <svg
+        aria-hidden
+        focusable="false"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        className={props.className}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.402 8.169L12 18.896l-7.336 3.871 1.402-8.169L.132 9.211l8.2-1.193L12 .587z" />
+      </svg>
+    );
+  }
+
   return (
     <section id="testimonials" className="py-20 bg-neutral-50 px-4 md:px-6">
       <div className="container mx-auto">
@@ -37,7 +53,7 @@ export function Testimonials() {
 
               <div className="flex items-center gap-1 mb-3">
                 {Array.from({ length: t.rating }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 text-amber-400" />
+                  <FilledStar key={i} className="h-4 w-4 text-amber-400" />
                 ))}
               </div>
 

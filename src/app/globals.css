@@ -1,8 +1,22 @@
 @import "tailwindcss";
 
+/* Load local fonts placed in public/fonts/ */
+@font-face {
+  font-family: "Remodia";
+  src:
+    url("/fonts/Remodia.woff2") format("woff2"),
+    url("/fonts/Remodia.woff") format("woff");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #1f2937;
+
+  /* Primary site font (uses local Remodia) */
+  --font-manrope: "Remodia";
 
   /* Height of the top navbar to offset floating elements */
   --navbar-height: 72px;
@@ -233,6 +247,22 @@ section {
 ::selection {
   background-color: var(--color-secondary);
   color: var(--color-primary);
+}
+
+/* Utility class to explicitly mark cursive text (keeps cursive excluded from global font) */
+.cursive {
+  font-family: var(--font-script);
+}
+
+/* Utility to explicitly use the Remodia site font */
+.font-remodia {
+  font-family: var(--font-manrope) !important;
+}
+
+/* Make fonts slightly more compact (tighter leading and slight negative tracking) */
+.font-compact {
+  line-height: 0.92 !important;
+  letter-spacing: -0.03em !important;
 }
 
 /* Scrollbar Styling */

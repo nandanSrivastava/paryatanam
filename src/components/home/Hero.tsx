@@ -63,16 +63,16 @@ export function Hero() {
           <div className="mb-8 mt-4 sm:mb-12 animate-fade-in-up">
             <div className="mb-4 sm:mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-primary shadow-lg">
               <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-secondary" />
-              Indo-Nepal Spiritual Journeys
+              India  Nepal – One Journey, Endless Experiences
             </div>
 
-            <h1 className="mb-4 sm:mb-6 font-serif text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-gray-900">
-              <span className="block mb-2">Where Every Journey Becomes a Story.</span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary">
-                Culture in Every Story
+            <h1 className="mb-4 sm:mb-6 font-serif text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
+              <span className="block mb-2 font-serif font-compact">Where Every Journey Becomes a Story.</span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary font-serif">
+                Explore rich traditions, hidden destinations,
               </span>
-              <span className="block text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-script italic text-gray-700 mt-2">
-                Nature in Every Breath..
+              <span className="block text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-script italic text-gray-700 mt-2">
+                and unforgettable journeys.
               </span>
             </h1>
 

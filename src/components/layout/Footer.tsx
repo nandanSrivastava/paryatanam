@@ -14,11 +14,21 @@ import { Input } from "@/components/ui/Input";
 
 export function Footer() {
   return (
-    <footer className="bg-gradient-primary text-white relative overflow-hidden">
+    <footer
+      className="text-white relative overflow-hidden"
+      style={{
+        backgroundImage: "url('/images/footer-image.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       {/* Decorative Elements - Hidden on mobile */}
       <div className="hidden sm:block absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
       <div className="hidden sm:block absolute bottom-0 left-0 w-80 h-80 bg-white/5 rounded-full blur-3xl" />
       <div className="absolute inset-0 pattern-dots opacity-5 sm:opacity-10" />
+      {/* Dark overlay to improve contrast against background image */}
+      <div className="absolute inset-0 bg-black/45" />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Main Footer Content */}
@@ -27,15 +37,13 @@ export function Footer() {
             {/* Brand Column */}
             <div className="space-y-5 sm:space-y-6 lg:col-span-1">
               <Link href="/" className="flex items-center gap-3 group">
-                <div className="bg-white text-primary p-2 rounded-br-xl rounded-tl-xl shadow-lg group-hover:scale-110 transition-transform">
-                  <span className="font-serif font-bold text-xl sm:text-2xl">
-                    P
-                  </span>
-                </div>
-                <span className="font-serif text-2xl sm:text-3xl font-bold">
-                  Paryatanam
-                </span>
+                <img
+                  src="./Paryatanam LOGO White PNG.png"
+                  alt="Paryatanam Logo"
+                  className="h-8 w-auto"
+                />
               </Link>
+
               <p className="text-white/85 text-sm sm:text-base leading-relaxed max-w-xs">
                 Adventure in every step, culture in every story, and nature in
                 every breath. Paryatanam curates meaningful Indo-Nepal journeys.
@@ -103,10 +111,10 @@ export function Footer() {
                     <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                   <a
-                    href="tel:+919000000000"
+                    href="tel:+919288202060"
                     className="text-sm sm:text-base text-white/85 hover:text-white active:text-white transition-colors py-1 touch-manipulation"
                   >
-                    +91 90000 00000
+                    +91 9288202060
                   </a>
                 </li>
                 <li className="flex items-center gap-3 group">
@@ -114,10 +122,10 @@ export function Footer() {
                     <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                   <a
-                    href="mailto:hello@paryatanam.in"
+                    href="mailto:paryatanamgo@gmail.com"
                     className="text-sm sm:text-base text-white/85 hover:text-white active:text-white transition-colors py-1 touch-manipulation break-all"
                   >
-                    hello@paryatanam.in
+                    paryatanamgo@gmail.com
                   </a>
                 </li>
               </ul>
