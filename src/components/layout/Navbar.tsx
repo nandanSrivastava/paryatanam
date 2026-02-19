@@ -16,6 +16,14 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const openWhatsApp = (e?: any) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    window.open("https://wa.me/919288202060", "_blank");
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -60,16 +68,20 @@ export function Navbar() {
 
           {/* Actions */}
           <div className="hidden lg:flex items-center gap-4">
-            <Link
-              href="tel:+919288202060"
+            <a
+              href="https://wa.me/919288202060"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={openWhatsApp}
               className="flex items-center gap-2 px-4 py-2 rounded-full transition-all font-medium text-sm hover:bg-neutral-100 text-neutral-800 outline-1"
             >
               <Phone className="w-4 h-4" />
               <span>+91 9288202060</span>
-            </Link>
+            </a>
             <Button
               variant="primary"
               size="md"
+              onClick={openWhatsApp}
               className="shadow-elegant hover:shadow-luxury transition-all hover:scale-105"
             >
               <User className="w-4 h-4 mr-2" />
@@ -107,15 +119,26 @@ export function Navbar() {
               </Link>
             ))}
             <hr className="border-neutral-200 my-2" />
-            <Link
-              href="tel:+919000000000"
+            <a
+              href="https://wa.me/919288202060"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => {
+                openWhatsApp(e);
+                setIsMobileMenuOpen(false);
+              }}
               className="flex items-center gap-3 px-4 py-4 rounded-xl text-neutral-800 font-medium hover:bg-neutral-100 active:bg-neutral-200 transition-colors touch-manipulation"
-              onClick={() => setIsMobileMenuOpen(false)}
             >
               <Phone className="w-5 h-5 text-primary" />
-              <span className="text-base">+91 90000 00000</span>
-            </Link>
-            <Button className="w-full justify-center shadow-elegant py-4 text-base mt-2 touch-manipulation active:scale-95">
+              <span className="text-base">+91 9288202060</span>
+            </a>
+            <Button
+              onClick={(e: any) => {
+                openWhatsApp(e);
+                setIsMobileMenuOpen(false);
+              }}
+              className="w-full justify-center shadow-elegant py-4 text-base mt-2 touch-manipulation active:scale-95"
+            >
               <User className="w-4 h-4 mr-2" />
               Send Enquiry
             </Button>

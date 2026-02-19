@@ -60,14 +60,16 @@ export function Hero() {
       <div className="relative z-10 container mx-auto flex min-h-screen flex-col justify-center px-6 sm:px-8 pt-[var(--navbar-height)] pb-12 sm:pb-24">
         <div className="max-w-3xl sm:max-w-6xl mx-auto text-center">
           {/* Main Hero Content */}
-            <div className="mb-12 mt-4 sm:mb-12 animate-fade-in-up">
+          <div className="mb-12 mt-4 sm:mb-12 animate-fade-in-up">
             <div className="mb-4 sm:mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-primary shadow-lg">
               <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-secondary" />
-              India  Nepal – One Journey, Endless Experiences
+              India Nepal – One Journey, Endless Experiences
             </div>
 
             <h1 className="mb-4 sm:mb-6 font-serif text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
-              <span className="block mb-2 font-serif font-compact">Where Every Journey Becomes a Story.</span>
+              <span className="block mb-2 font-serif font-compact">
+                Where Every Journey Becomes a Story.
+              </span>
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary font-serif">
                 Explore rich traditions, hidden destinations,
               </span>
@@ -76,7 +78,7 @@ export function Hero() {
               </span>
             </h1>
 
-              <p className="mb-12 sm:mb-10 max-w-3xl mx-auto text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed font-medium">
+            <p className="mb-12 sm:mb-10 max-w-3xl mx-auto text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed font-medium">
               Experience temples, jungles, and riverside serenity in our curated
               Indo-Nepal border tours.
               <span className="hidden sm:inline">
@@ -112,10 +114,10 @@ export function Hero() {
           </div>
 
           {/* Feature Cards */}
-            <div
-              className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-6 animate-fade-in"
-              style={{ animationDelay: "0.9s" }}
-            >
+          <div
+            className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-6 animate-fade-in"
+            style={{ animationDelay: "0.9s" }}
+          >
             <div className="group rounded-2xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl active:scale-95 sm:hover:scale-105 transition-all duration-300">
               <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-all">
                 <Landmark className="h-6 w-6" />
