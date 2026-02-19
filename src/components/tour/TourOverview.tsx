@@ -17,14 +17,14 @@ export function TourOverview({ tour }: TourOverviewProps) {
         </h2>
       </div>
 
-      <ul className="grid grid-cols-1 gap-5 mb-10">
+      <ul className="grid grid-cols-1 mb-2">
         {tour.highlights.map((highlight: string, index: number) => (
           <li
             key={index}
-            className="flex items-start gap-4 text-gray-700 leading-relaxed group hover:bg-primary/5 p-4 rounded-2xl transition-all duration-300"
+            className="flex items-start gap-3 text-gray-700 leading-relaxed group hover:bg-primary/5 p-3 rounded-2xl transition-all duration-300"
           >
-            <div className="mt-0.5 min-w-7 h-7 rounded-xl bg-gradient-to-br from-primary to-primary/80 text-white flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
-              <Check className="w-4 h-4 stroke-[3]" />
+            <div className="mt-0.5 min-w-6 h-6 rounded-xl bg-gradient-to-br from-primary to-primary/80 text-white flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+              <Check className="w-3.5 h-3.5 stroke-[2.5]" />
             </div>
             <span className="text-base group-hover:text-primary transition-colors">
               {highlight}
@@ -33,7 +33,7 @@ export function TourOverview({ tour }: TourOverviewProps) {
         ))}
       </ul>
 
-      <hr className="border-neutral-200 my-10" />
+      <hr className="border-neutral-200 my-6" />
 
       <h2 className="text-3xl font-serif font-bold text-primary mb-6 flex items-center gap-3">
         About the Tour

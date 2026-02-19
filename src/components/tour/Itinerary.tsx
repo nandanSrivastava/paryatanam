@@ -62,20 +62,81 @@ export function Itinerary({ days }: ItineraryProps) {
               {openDay === day.day && (
                 <div className="mt-3 sm:mt-4 text-gray-600 leading-relaxed animate-in fade-in slide-in-from-top-2 duration-300">
                   <div className="space-y-2.5 sm:space-y-3 rounded-lg sm:rounded-xl border border-gray-100 p-3 sm:p-4 bg-gray-50">
-                    {day.schedule.map((slot) => (
-                      <div
-                        key={`${day.day}-${slot.time}-${slot.activity}`}
-                        className="flex items-start gap-2 sm:gap-3 text-sm"
-                      >
-                        <Clock4 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                        <div className="flex-1 min-w-0">
-                          <p className="font-semibold text-gray-800">
-                            {slot.time}
-                          </p>
-                          <p>{slot.activity}</p>
-                        </div>
-                      </div>
-                    ))}
+                    {
+                      // Group consecutive schedule slots by time. Empty times inherit previous time.
+                    }
+                    {(() => {
+                      type Group = { time: string; activities: string[] };
+                      const groups: Group[] = [];
+                      let current: Group | null = null;
+
+                      day.schedule.forEach((slot) => {
+                        const t = (slot.time || "").trim();
+                        if (t === "") {
+                          // continuation of previous time
+                          if (current) current.activities.push(slot.activity);
+                          else
+                            current = { time: "", activities: [slot.activity] };
+                        } else {
+                          if (current && current.time === t) {
+                            current.activities.push(slot.activity);
+                          } else {
+                            if (current) groups.push(current);
+                            current = { time: t, activities: [slot.activity] };
+                          }
+                        }
+                      });
+
+                      if (current) groups.push(current);
+
+                      return groups.map((g, i) => {
+                        const key = `${day.day}-${i}-${g.time}`;
+                        if (g.activities.length > 1) {
+                          return (
+                            <div
+                              key={key}
+                              className="flex items-start gap-2 sm:gap-3 text-sm"
+                            >
+                              <Clock4 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                              <div className="flex-1 min-w-0">
+                                {g.time && (
+                                  <p className="font-semibold text-gray-800 mb-1">
+                                    {g.time}
+                                  </p>
+                                )}
+                                <ul className="list-disc pl-5 space-y-1 text-gray-700">
+                                  {g.activities.map((act, idx) => (
+                                    <li key={idx} className="text-sm">
+                                      {act}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            </div>
+                          );
+                        }
+
+                        // single activity rendered as a bullet for visual consistency
+                        return (
+                          <div
+                            key={key}
+                            className="flex items-start gap-2 sm:gap-3 text-sm"
+                          >
+                            <Clock4 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                            <div className="flex-1 min-w-0">
+                              {g.time && (
+                                <p className="font-semibold text-gray-800 mb-1">
+                                  {g.time}
+                                </p>
+                              )}
+                              <ul className="list-disc pl-5 text-gray-700">
+                                <li className="text-sm">{g.activities[0]}</li>
+                              </ul>
+                            </div>
+                          </div>
+                        );
+                      });
+                    })()}
                   </div>
 
                   <div className="mt-3 sm:mt-4">
