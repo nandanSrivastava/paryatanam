@@ -54,7 +54,7 @@ export const floatingDestinations: Destination[] = [
     image: "https://i.ytimg.com/vi/IlOjSTT44aE/hqdefault.jpg",
     position: "top-20 right-20 sm:top-24 sm:right-28",
     delay: "1.6s",
-    size: "w-10 h-10 sm:w-12 sm:h-12",
+    size: "w-12 h-12 sm:w-16 sm:h-16",
   },
 
   // LEFT SIDE VERTICAL ARRANGEMENT - Organized progression
@@ -124,14 +124,6 @@ export const floatingDestinations: Destination[] = [
     position: "bottom-28 left-2 sm:bottom-32 sm:left-4",
     delay: "1.5s",
     size: "w-12 h-12 sm:w-14 sm:h-14",
-  },
-  {
-    name: "Jungle Camp",
-    image:
-      "https://valmikitigerreserve.com/wp-content/uploads/2022/08/Jungle-Camp-Campus-min-1024x683.jpg",
-    position: "bottom-8 left-22 sm:bottom-12 sm:left-28",
-    delay: "0.5s",
-    size: "w-16 h-16 sm:w-18 sm:h-18",
   },
 
   // BOTTOM RIGHT CLUSTER - Balanced final corner

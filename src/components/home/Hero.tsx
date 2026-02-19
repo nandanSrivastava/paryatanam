@@ -60,19 +60,19 @@ export function Hero() {
       <div className="relative z-10 container mx-auto flex min-h-screen flex-col justify-center px-6 sm:px-8 pt-[var(--navbar-height)] pb-12 sm:pb-24">
         <div className="max-w-3xl sm:max-w-6xl mx-auto text-center">
           {/* Main Hero Content */}
-          <div className="mb-8 sm:mb-12 animate-fade-in-up">
+          <div className="mb-8 mt-4 sm:mb-12 animate-fade-in-up">
             <div className="mb-4 sm:mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-primary shadow-lg">
               <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-secondary" />
               Indo-Nepal Spiritual Journeys
             </div>
 
-            <h1 className="mb-4 sm:mb-6 font-serif text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight text-gray-900">
-              <span className="block mb-2">Discover the</span>
+            <h1 className="mb-4 sm:mb-6 font-serif text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-gray-900">
+              <span className="block mb-2">Where Every Journey Becomes a Story.</span>
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary">
-                Sacred & Wild
+                Culture in Every Story
               </span>
               <span className="block text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-script italic text-gray-700 mt-2">
-                of Valmikinagar & Nepal
+                Nature in Every Breath..
               </span>
             </h1>
 

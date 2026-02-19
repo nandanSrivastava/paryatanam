@@ -10,7 +10,6 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "Packages", href: "/#featured-packages" },
   { name: "Why Choose Us", href: "/#why-paryatanam" },
-  { name: "Know Before You Go", href: "/#know-before-you-go" },
 ];
 
 export function Navbar() {
@@ -62,11 +61,11 @@ export function Navbar() {
           {/* Actions */}
           <div className="hidden lg:flex items-center gap-4">
             <Link
-              href="tel:+919000000000"
+              href="tel:+919288202060"
               className="flex items-center gap-2 px-4 py-2 rounded-full transition-all font-medium text-sm hover:bg-neutral-100 text-neutral-800"
             >
               <Phone className="w-4 h-4" />
-              <span>+91 90000 00000</span>
+              <span>+91 9288202060</span>
             </Link>
             <Button
               variant="primary"
