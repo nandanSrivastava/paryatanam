@@ -55,9 +55,9 @@ export const tourPackages: TourPackage[] = [
     rating: 4.8,
     reviews: 187,
     images: [
-      "https://media2.thrillophilia.com/images/photos/000/373/536/original/1622526611_shutterstock_1594833985.jpg?w=753&h=450&dpr=1.5?q=80&w=2070&auto=format&fit=crop",
+      "/images/destinations/paryatanam-valmikinagar-package.jpeg",
       "https://valmikitigerreserve.com/wp-content/uploads/2022/08/c1-scaled.jpg?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=2069&auto=format&fit=crop",
+      "https://media2.thrillophilia.com/images/photos/000/373/536/original/1622526611_shutterstock_1594833985.jpg?w=753&h=450&dpr=1.5?q=80&w=2070&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1932&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1472396961693-142e6e269027?q=80&w=2070&auto=format&fit=crop",
     ],
@@ -144,10 +144,10 @@ export const tourPackages: TourPackage[] = [
     rating: 4.9,
     reviews: 264,
     images: [
-      "https://tourism.bihar.gov.in/content/dam/bihar-tourism/images/category_a/west_champaran/valmiki_tiger_reserve/wildlife_west_champaran_category_a_valmiki_tiger_reserve_pic_02.jpg?q=80&w=2070&auto=format&fit=crop",
+      "/images/destinations/paryatanam-indo-nepal-package.jpeg",
       "https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=2070&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070&auto=format&fit=crop",
+      "https://tourism.bihar.gov.in/content/dam/bihar-tourism/images/category_a/west_champaran/valmiki_tiger_reserve/wildlife_west_champaran_category_a_valmiki_tiger_reserve_pic_02.jpg?q=80&w=2070&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2070&auto=format&fit=crop",
     ],
     description:

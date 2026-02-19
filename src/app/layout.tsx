@@ -21,6 +21,11 @@ export const metadata: Metadata = {
   title: "Paryatanam | Indo-Nepal Spiritual & Nature Tours",
   description:
     "Explore Valmikinagar and Nepal border circuits with curated temple trails, jungle safaris, river experiences, and comfortable stays.",
+  icons: {
+    icon: "/images/favicon.png",
+    shortcut: "/images/favicon.png",
+    apple: "/images/favicon.png",
+  },
 };
 
 export default function RootLayout({

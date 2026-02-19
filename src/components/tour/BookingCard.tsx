@@ -19,7 +19,17 @@ export function BookingCard({ tour }: BookingCardProps) {
     ((tour.originalPrice - tour.price) / tour.originalPrice) * 100,
   );
   const [date, setDate] = useState<string>("");
+  const [travellers, setTravellers] = useState<string>("2 Adults, 0 Children");
   const today = new Date().toISOString().split("T")[0];
+
+  const handleSendEnquiry = () => {
+    const phone = "919288202060"; // WhatsApp number in international format without +
+    const message = `Hi, I am doing Enquiry for ${tour.title}, with Travel Date: ${date || "Not specified"}, with the number of Travelers: ${travellers || "Not specified"} and This is Requested via: Paryatanam website`;
+    // use wa.me link
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    // Redirect user to WhatsApp
+    window.location.href = url;
+  };
 
   return (
     <div className="bg-white rounded-2xl sm:rounded-3xl shadow-xl sm:shadow-2xl border border-gray-100 overflow-hidden lg:sticky lg:top-24 hover:shadow-3xl transition-shadow duration-500">
@@ -85,6 +95,8 @@ export function BookingCard({ tour }: BookingCardProps) {
             <input
               type="number"
               placeholder="2 Adults, 0 Children"
+              value={travellers}
+              onChange={(e) => setTravellers(e.target.value)}
               className="w-full outline-none text-sm sm:text-base font-medium text-gray-700 placeholder-gray-400 bg-transparent"
             />
           </div>
@@ -94,6 +106,7 @@ export function BookingCard({ tour }: BookingCardProps) {
         <Button
           size="lg"
           className="w-full bg-gradient-secondary hover:bg-secondary/90 active:bg-secondary text-primary font-bold text-base sm:text-lg h-14 sm:h-16 shadow-luxury active:scale-[0.98] sm:hover:shadow-2xl sm:hover:scale-105 transition-all duration-300 touch-manipulation"
+          onClick={handleSendEnquiry}
         >
           Send Enquiry
         </Button>
