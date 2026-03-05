@@ -182,28 +182,30 @@ export function Hero() {
       <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-secondary/15 to-transparent rounded-full blur-3xl" />
 
-      <div className="relative z-10 container mx-auto flex min-h-screen flex-col justify-center px-6 sm:px-8 pt-[var(--navbar-height)] pb-12 sm:pb-24">
-        <div className="max-w-3xl sm:max-w-6xl mx-auto text-center">
+      <div className="relative z-10 container mx-auto flex min-h-screen flex-col justify-center px-4 sm:px-6 md:px-8 pt-[var(--navbar-height)] pb-8 sm:pb-16 md:pb-24">
+        <div className="max-w-3xl sm:max-w-6xl mx-auto text-center w-full">
           {/* Main Hero Content */}
-          <div className="mb-12 mt-4 sm:mb-12 animate-fade-in-up">
-            <div className="mb-4 sm:mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-primary shadow-lg">
-              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-secondary" />
-              India Nepal – One Journey, Endless Experiences
+          <div className="mb-10 sm:mb-10 md:mb-12 mt-4 sm:mt-4 animate-fade-in-up">
+            <div className="mb-6 sm:mb-6 md:mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-primary shadow-lg">
+              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-secondary flex-shrink-0" />
+              <span className="line-clamp-2 sm:line-clamp-1">
+                India Nepal – One Journey, Endless Experiences
+              </span>
             </div>
 
-            <h1 className="mb-4 sm:mb-6 font-serif text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
-              <span className="block mb-2 font-serif font-anabae">
+            <h1 className="mb-5 sm:mb-6 md:mb-6 font-serif text-xl xs:text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
+              <span className="block mb-2 sm:mb-2 font-serif font-anabae">
                 Where Every Journey Becomes a Story.
               </span>
-              <span className="block text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-popins text-gray-700 mt-2">
+              <span className="block text-sm xs:text-base sm:text-xl md:text-3xl lg:text-4xl font-popins text-gray-700 mt-2 sm:mt-2">
                 Explore rich traditions, hidden destinations,
               </span>
-              <span className="block text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-popins text-gray-700 mt-2">
+              <span className="block text-sm xs:text-base sm:text-xl md:text-3xl lg:text-4xl font-popins text-gray-700 mt-2 sm:mt-2">
                 and unforgettable journeys.
               </span>
             </h1>
 
-            <p className="mb-12 sm:mb-10 max-w-3xl mx-auto text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed font-medium">
+            <p className="mb-10 sm:mb-10 md:mb-12 max-w-3xl mx-auto text-sm xs:text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed font-medium px-1">
               Experience temples, jungles, and riverside serenity in our curated
               Indo-Nepal border tours.
               <span className="hidden sm:inline">
@@ -215,23 +217,23 @@ export function Hero() {
           </div>
           {/* Quick Action Buttons */}
           <div
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-12 sm:mb-16 animate-fade-in"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 sm:mb-12 md:mb-16 animate-fade-in w-full px-1 sm:px-0"
             style={{ animationDelay: "0.6s" }}
           >
-            <Link href="#featured-packages">
+            <Link href="#featured-packages" className="w-full sm:w-auto">
               <Button
                 size="lg"
-                className="px-8 py-4 sm:px-10 sm:py-5 text-base sm:text-lg shadow-luxury hover:shadow-xl active:scale-95 sm:hover:scale-105 transition-all"
+                className="w-full sm:w-auto px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 text-sm sm:text-base md:text-lg shadow-luxury hover:shadow-xl active:scale-95 sm:hover:scale-105 transition-all"
               >
                 View All Packages
-                <ArrowRight className="ml-2 h-5 w-5 sm:h-6 sm:w-6" />
+                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
               </Button>
             </Link>
-            <Link href="#why-paryatanam">
+            <Link href="#why-paryatanam" className="w-full sm:w-auto">
               <Button
                 size="lg"
                 variant="outline"
-                className="px-8 py-4 sm:px-10 sm:py-5 text-base sm:text-lg border-2 border-primary/30 text-primary hover:bg-primary hover:text-white shadow-lg hover:shadow-xl active:scale-95 sm:hover:scale-105 transition-all"
+                className="w-full sm:w-auto px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 text-sm sm:text-base md:text-lg border-2 border-primary/30 text-primary hover:bg-primary hover:text-white shadow-lg hover:shadow-xl active:scale-95 sm:hover:scale-105 transition-all"
               >
                 Why Choose Us
               </Button>
