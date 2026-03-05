@@ -9,8 +9,13 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.3",
     "clsx": "^2.1.1",
+    "cookie": "^1.1.1",
+    "inrext-framework": "^1.0.0",
+    "jsonwebtoken": "^9.0.3",
     "lucide-react": "^0.564.0",
+    "mongoose": "^9.2.4",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3",
