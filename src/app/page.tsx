@@ -4,6 +4,7 @@ import { Destinations } from "@/components/home/Destinations";
 import { FeaturedTours } from "@/components/home/FeaturedTours";
 import { Testimonials } from "@/components/home/Testimonials";
 import { Footer } from "@/components/layout/Footer";
+import { WhyChooseUs } from "@/components/home/WhyChooseUs";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Hero />
       <Destinations />
       <FeaturedTours />
+      <WhyChooseUs />
       <Testimonials />
       <Footer />
     </main>

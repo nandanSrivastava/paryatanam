@@ -185,9 +185,9 @@ export function Hero() {
       <div className="relative z-10 container mx-auto flex min-h-screen flex-col justify-center px-4 sm:px-6 md:px-8 pt-[var(--navbar-height)] pb-8 sm:pb-16 md:pb-24">
         <div className="max-w-3xl sm:max-w-6xl mx-auto text-center w-full">
           {/* Main Hero Content */}
-          <div className="mb-10 sm:mb-10 md:mb-12 mt-4 sm:mt-4 animate-fade-in-up">
-            <div className="mb-6 sm:mb-6 md:mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-primary shadow-lg">
-              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-secondary flex-shrink-0" />
+          <div className="mb-10 sm:mb-10 md:mb-12 -mt-4 sm:mt-4 animate-fade-in-up">
+            <div className="mb-4 sm:mb-6 md:mb-6 inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-primary/20 bg-primary/10 px-2 py-1 sm:px-4 sm:py-2 md:px-6 md:py-3 text-[10px] xs:text-xs sm:text-sm font-bold uppercase tracking-wider text-primary shadow-lg">
+              <Sparkles className="w-2.5 h-2.5 sm:w-4 sm:h-4 text-secondary flex-shrink-0" />
               <span className="line-clamp-2 sm:line-clamp-1">
                 India Nepal – One Journey, Endless Experiences
               </span>
@@ -229,7 +229,7 @@ export function Hero() {
                 <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
               </Button>
             </Link>
-            <Link href="#why-paryatanam" className="w-full sm:w-auto">
+            <Link href="#why-choose-us" className="w-full sm:w-auto">
               <Button
                 size="lg"
                 variant="outline"
