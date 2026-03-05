@@ -1,3 +1,4 @@
+"use client";
 import {
   ArrowRight,
   ShieldCheck,
@@ -8,10 +9,134 @@ import {
   MapPin,
   Calendar,
   Users,
+  Gem,
+  Binoculars,
+  Zap,
+  Home,
+  Heart,
+  Shield,
+  Map,
+  Compass,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { floatingDestinations } from "@/lib/floatingDestinations";
+import { tourCategories } from "@/lib/data";
+import React, { useRef, useState, useEffect } from "react";
+
+const iconMap: { [key: string]: React.ReactNode } = {
+  Gem: <Gem className="w-8 h-8 text-secondary" />,
+  Trees: <Trees className="w-8 h-8 text-secondary" />,
+  Binoculars: <Binoculars className="w-8 h-8 text-secondary" />,
+  Zap: <Zap className="w-8 h-8 text-secondary" />,
+  Home: <Home className="w-8 h-8 text-secondary" />,
+  Users: <Users className="w-8 h-8 text-secondary" />,
+  Heart: <Heart className="w-8 h-8 text-secondary" />,
+  Shield: <Shield className="w-8 h-8 text-secondary" />,
+  Map: <Map className="w-8 h-8 text-secondary" />,
+  Compass: <Compass className="w-8 h-8 text-secondary" />,
+};
+
+function HeroCarousel() {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+  const autoScrollIntervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  const checkScroll = () => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } =
+        scrollContainerRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+    }
+  };
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = 320;
+      const newScroll =
+        scrollContainerRef.current.scrollLeft +
+        (direction === "left" ? -scrollAmount : scrollAmount);
+      scrollContainerRef.current.scrollTo({
+        left: newScroll,
+        behavior: "smooth",
+      });
+      setTimeout(checkScroll, 300);
+    }
+  };
+
+  const startAutoScroll = () => {
+    autoScrollIntervalRef.current = setInterval(() => {
+      if (scrollContainerRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } =
+          scrollContainerRef.current;
+
+        if (scrollLeft >= scrollWidth - clientWidth - 10) {
+          scrollContainerRef.current.scrollTo({
+            left: 0,
+            behavior: "smooth",
+          });
+        } else {
+          scroll("right");
+        }
+      }
+    }, 4000);
+  };
+
+  const stopAutoScroll = () => {
+    if (autoScrollIntervalRef.current) {
+      clearInterval(autoScrollIntervalRef.current);
+    }
+  };
+
+  useEffect(() => {
+    checkScroll();
+    startAutoScroll();
+    window.addEventListener("resize", checkScroll);
+
+    return () => {
+      window.removeEventListener("resize", checkScroll);
+      stopAutoScroll();
+    };
+  }, []);
+
+  return (
+    <div
+      className="relative animate-fade-in"
+      style={{ animationDelay: "0.9s" }}
+      onMouseEnter={stopAutoScroll}
+      onMouseLeave={startAutoScroll}
+    >
+      {/* Carousel */}
+      <div
+        ref={scrollContainerRef}
+        onScroll={checkScroll}
+        className="flex gap-4 overflow-x-auto scroll-smooth px-2"
+        style={{ scrollBehavior: "smooth", scrollbarWidth: "none" }}
+      >
+        {tourCategories.map((category) => (
+          <div
+            key={category.id}
+            className="flex-shrink-0 w-60 sm:w-72 bg-gradient-to-br from-emerald-50 to-emerald-100/50 rounded-2xl p-5 shadow-md hover:shadow-lg transition-all border border-emerald-200/50 flex flex-col items-center text-center hover:-translate-y-1"
+          >
+            <div className="mb-3 p-2 bg-white rounded-xl shadow-sm">
+              {iconMap[category.icon]}
+            </div>
+            <h3 className="text-base font-bold text-primary mb-2">
+              {category.title}
+            </h3>
+            <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
+              {category.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export function Hero() {
   return (
@@ -67,13 +192,13 @@ export function Hero() {
             </div>
 
             <h1 className="mb-4 sm:mb-6 font-serif text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
-              <span className="block mb-2 font-serif font-compact">
+              <span className="block mb-2 font-serif font-anabae">
                 Where Every Journey Becomes a Story.
               </span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary font-serif">
+              <span className="block text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-popins text-gray-700 mt-2">
                 Explore rich traditions, hidden destinations,
               </span>
-              <span className="block text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-script italic text-gray-700 mt-2">
+              <span className="block text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-popins text-gray-700 mt-2">
                 and unforgettable journeys.
               </span>
             </h1>
@@ -113,48 +238,8 @@ export function Hero() {
             </Link>
           </div>
 
-          {/* Feature Cards */}
-          <div
-            className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-6 animate-fade-in"
-            style={{ animationDelay: "0.9s" }}
-          >
-            <div className="group rounded-2xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl active:scale-95 sm:hover:scale-105 transition-all duration-300">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-all">
-                <Landmark className="h-6 w-6" />
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
-                Sacred Temples
-              </h3>
-              <p className="text-sm text-gray-600">
-                Visit ancient ashrams and holy sites across the Indo-Nepal
-                border
-              </p>
-            </div>
-
-            <div className="group rounded-2xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl active:scale-95 sm:hover:scale-105 transition-all duration-300">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/10 text-secondary group-hover:bg-secondary group-hover:text-white transition-all">
-                <Trees className="h-6 w-6" />
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
-                Wild Safaris
-              </h3>
-              <p className="text-sm text-gray-600">
-                Explore dense forests and wildlife in Valmiki National Park
-              </p>
-            </div>
-
-            <div className="group rounded-2xl border border-gray-200 bg-white/80 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl active:scale-95 sm:hover:scale-105 transition-all duration-300">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-all">
-                <ShieldCheck className="h-6 w-6" />
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
-                Trusted Travel
-              </h3>
-              <p className="text-sm text-gray-600">
-                Comfortable stays and seamless transfers for worry-free journeys
-              </p>
-            </div>
-          </div>
+          {/* Feature Cards - Auto Scrolling Carousel */}
+          <HeroCarousel />
         </div>
       </div>
     </div>
