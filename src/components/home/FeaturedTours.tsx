@@ -160,8 +160,8 @@ export function FeaturedTours() {
             <Link href={`/tours/${tourPackages[0].slug}`}>
               <Button
                 size="lg"
-                variant="secondary"
-                className="px-8 sm:px-10 md:px-12 py-3.5 sm:py-4 text-primary font-bold text-sm sm:text-base touch-manipulation active:scale-95 sm:hover:scale-105 transition-all"
+                variant="primary"
+                className="px-8 sm:px-10 md:px-12 py-3.5 sm:py-4 text-remodia text-white font-bold text-sm sm:text-base touch-manipulation active:scale-95 sm:hover:scale-105 transition-all"
               >
                 Enquire Now
               </Button>

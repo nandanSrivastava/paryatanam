@@ -6,7 +6,8 @@ const destinations = [
   {
     name: "Spiritual & Cultural Visits",
     description: "Temples, ashrams, and sacred sites.",
-    image: "https://media3.thrillophilia.com/filestore/3gqbw1tu9pac2318jv8jtl2mzdpi_shutterstock_1096957235.jpg?h=422&w=auto&dpr=1.125",
+    image:
+      "https://media3.thrillophilia.com/filestore/3gqbw1tu9pac2318jv8jtl2mzdpi_shutterstock_1096957235.jpg?h=422&w=auto&dpr=1.125",
   },
   {
     name: "Jungle Safari",

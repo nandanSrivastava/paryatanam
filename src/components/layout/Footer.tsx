@@ -36,7 +36,7 @@ export function Footer() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 mb-12 sm:mb-16">
             {/* Brand Column */}
             <div className="space-y-5 sm:space-y-6 lg:col-span-1">
-              <Link href="/" className="flex items-center gap-3 group">
+              <Link href="https://www.paryatanam.com" className="flex items-center gap-3 group">
                 <img
                   src="./Paryatanam LOGO White PNG.png"
                   alt="Paryatanam Logo"
