@@ -5,6 +5,13 @@ export interface DayPlan {
   inclusions: string[];
 }
 
+export interface TourCategory {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+}
+
 export interface TourPackage {
   id: string;
   slug: string;
@@ -39,7 +46,68 @@ export const brandContent = {
   journeyDescription2:
     "From sacred temples to thrilling jungle safaris, every journey is designed to give you culture, nature, and comfort in one unforgettable experience.",
 };
-
+export const tourCategories: TourCategory[] = [
+  {
+    id: "hidden-gems",
+    title: "Hidden Gems",
+    description: "Discover unexplored places beyond the usual tourist routes.",
+    icon: "Gem",
+  },
+  {
+    id: "wild-escapes",
+    title: "Wild Escapes",
+    description: "Reconnect with nature in peaceful forest surroundings.",
+    icon: "Trees",
+  },
+  {
+    id: "royal-safaris",
+    title: "Royal Safaris",
+    description: "Experience the jungle in its purest form.",
+    icon: "Binoculars",
+  },
+  {
+    id: "adventure-trails",
+    title: "Adventure Trails",
+    description: "Feel the thrill of trekking, boating & more.",
+    icon: "Zap",
+  },
+  {
+    id: "comfort-stays",
+    title: "Comfort Stays",
+    description: "Relax in handpicked hotels with full comfort.",
+    icon: "Home",
+  },
+  {
+    id: "family-trips",
+    title: "Family Trips",
+    description: "Memorable journeys designed for all age groups.",
+    icon: "Users",
+  },
+  {
+    id: "romantic-getaways",
+    title: "Romantic Getaways",
+    description: "Perfect escapes for couples and honeymooners.",
+    icon: "Heart",
+  },
+  {
+    id: "safe-travel",
+    title: "Safe Travel",
+    description: "Reliable transport with trusted local drivers.",
+    icon: "Shield",
+  },
+  {
+    id: "border-tourism",
+    title: "Border Tourism",
+    description: "Explore the beauty of India and Nepal together.",
+    icon: "Map",
+  },
+  {
+    id: "custom-journeys",
+    title: "Custom Journeys",
+    description: "Trips planned exactly the way you want.",
+    icon: "Compass",
+  },
+];
 export const tourPackages: TourPackage[] = [
   {
     id: "valmikinagar-one-day",

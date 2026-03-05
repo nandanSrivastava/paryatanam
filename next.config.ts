@@ -23,6 +23,18 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "media2.thrillophilia.com",
       },
+      {
+        protocol: "https",
+        hostname: "media3.thrillophilia.com",
+      },
+      {
+        protocol: "https",
+        hostname: "en.wikipedia.org",
+      },
+      {
+        protocol: "https",
+        hostname: "pixabay.com",
+      },
     ],
   },
 };

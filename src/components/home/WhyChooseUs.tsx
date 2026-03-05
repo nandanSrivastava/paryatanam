@@ -35,7 +35,7 @@ const features = [
 export function WhyChooseUs() {
   return (
     <section
-      id="why-paryatanam"
+      id="why-choose-us"
       className="py-12 sm:py-16 md:py-20 bg-gradient-primary text-white relative overflow-hidden"
     >
       {/* Subtle decorative elements */}
