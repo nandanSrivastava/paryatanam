@@ -41,6 +41,12 @@ export interface TourPackage {
     premium: number;
     exclusive: number;
   };
+  tierDetails?: {
+    standard: string[];
+    value: string[];
+    premium: string[];
+    exclusive: string[];
+  };
 }
 
 export const brandContent = {
@@ -577,6 +583,140 @@ export const tourPackages: TourPackage[] = [
       value: 34999,
       premium: 38999,
       exclusive: 47999
+    }
+  },
+  {
+    id: "educational-nature-trip",
+    slug: "educational-nature-trip",
+    title: "Valmikinagar Educational Nature Trip",
+    subtitle: "1D 1 Day in Valmikinagar & Nepal Border Circuit",
+    location: "Valmikinagar & Nepal Border",
+    duration: "1 Day",
+    minPeople: "Group Booking",
+    price: 899,
+    originalPrice: 1499,
+    perPersonPrice: 899,
+    rating: 4.8,
+    reviews: 95,
+    images: [
+      "/images/package/school_group.png",
+      "/images/destinations/paryatanam-valmikinagar-package.jpeg",
+      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop",
+    ],
+    description: "Discover the spiritual and natural charm of Valmikinagar and the nearby Nepal border region, where sacred temples, lush forests, and peaceful river landscapes create a truly enriching experience. Visit revered sites like Valmiki Ashram Dham, Maa Nardevi Temple, and Jatashankar Dham, Kawleshwar Dham followed by spiritual excursions to Triveni Dham and Gajendra Moksha Dham in Nepal. Along with spiritual exploration, enjoy refreshing experiences such as jungle safari, hanging bridge walks, Kawleshwar Jhula, Eco-Park and a calming riverside stroll along the Gandak River. This tour offers a perfect blend of devotion, nature, and relaxation in a short yet memorable journey.",
+    highlights: [
+      "Food",
+      "Transport",
+      "Jungle Safari",
+      "Guide",
+      "Sightseeing"
+    ],
+    inclusions: [
+      "Pickup & drop as per itinerary",
+      "Evening Snacks & Refreshments as per itinerary",
+      "Meals Included – Lunch as per itinerary",
+      "Transport Included",
+      "Sightseeing Included",
+      "Spiritual & cultural sightseeing: Maa Nardevi, Jatashankar, Kawaleshwar, Valmiki Ashram, Gandak Dam, Triveni Sangam, Gajendra Moksha, Seesh Mahal",
+      "Boat Safari Included (Subject to local/govt regulations)",
+      "Wild Jungle Safari Included (Subject to local/govt regulations)",
+      "Kawalsher Jhula",
+      "Hanging Bridge Nepal side",
+      "Eco-Park visit",
+      "Riverside walk along Gandak River"
+    ],
+    exclusions: [
+      "Personal expenses such as shopping, tips, telephone calls, laundry, etc.",
+      "Meals not mentioned under the Inclusions section",
+      "Camera or video fees at sightseeing places (if applicable)",
+      "Travel insurance",
+      "GST and applicable taxes",
+      "Bonfire expenses (if requested)",
+      "Bus stop pickup and drop (only available at common group timing)",
+      "Room service and restaurant expenses at the hotel",
+      "Adventure activities or optional activities not mentioned in the itinerary",
+      "Alcoholic beverages, soft drinks, mineral water, or other beverages",
+      "Transport services apart from those mentioned in the itinerary",
+      "Any costs arising due to unforeseen circumstances such as landslides, roadblocks, etc.",
+      "Anything not specifically mentioned under 'Inclusions'"
+    ],
+    knowBeforeYouGo: [
+      "Prices may vary during peak seasons, long weekends, and festivals.",
+      "Valid government ID proof is mandatory for all travelers.",
+      "Indian citizens should carry a valid ID for Nepal border visits.",
+      "Timely reporting and punctual departures are important.",
+      "Please avoid littering and respect nature in forest zones.",
+      "Carry comfortable clothing, walking shoes, and sunscreen.",
+      "Photography at religious sites may be restricted; follow guidelines.",
+      "The itinerary may be modified due to weather or forest regulations."
+    ],
+    importantNote: "The itinerary may be modified due to weather conditions, forest regulations, or local circumstances for guest safety and a smooth travel experience.",
+    itinerary: [
+      {
+        day: 1,
+        title: "Educational Experience",
+        schedule: [
+          { time: "Morning", activity: "Pickup and Welcome" },
+          { time: "Morning", activity: "Milk Tea / Milk Coffee" },
+          { time: "Morning", activity: "Temple visits (Maa Nardevi, Jatashankar, Kawaleshwar, Valmiki Ashram Dham)" },
+          { time: "Morning", activity: "Jungle Safari Experience" },
+          { time: "Afternoon", activity: "Lunch (Veg/Non-Veg based on tier)" },
+          { time: "Afternoon", activity: "Nepal Border Circuit: Triveni Dham, Seesh Mahal" },
+          { time: "Evening", activity: "Hanging Bridge & Eco-Park" },
+          { time: "Evening", activity: "Evening Snacks & Refreshments" },
+          { time: "Sunset", activity: "Riverside Walk (Gandak River)" },
+          { time: "Night", activity: "Return Drop" }
+        ],
+        inclusions: [
+          "Transport & Sightseeing",
+          "Lunch & Snacks",
+          "Safari & Entry Tickets"
+        ]
+      }
+    ],
+    categoryId: "school-group",
+    tierPrices: {
+      standard: 899,
+      value: 1099,
+      premium: 1599,
+      exclusive: 1999
+    },
+    tierDetails: {
+      standard: [
+        "Lunch (Veg)",
+        "Washroom",
+        "Comfortable 3-Wheeler Transport",
+        "Local Tour Guide",
+        "All Sightseeing Entry Tickets Included",
+        "Exploring India (Local Valmikinagar)"
+      ],
+      value: [
+        "Lunch (Veg)",
+        "Washroom",
+        "Comfortable 3-Wheeler Transport",
+        "Local Tour Guide",
+        "All Sightseeing Entry Tickets Included",
+        "India – Nepal Border Visit Experience"
+      ],
+      premium: [
+        "Lunch (Veg & Non-Veg Options)",
+        "1 Rest Room Stop",
+        "Comfortable 3-Wheeler Transport",
+        "🐅 Valmikinagar Jungle Safari Experience",
+        "🧭 Local Tour Guide",
+        "🎟 All Sightseeing Entry Tickets Included",
+        "🌏 India – Nepal Border Visit Experience"
+      ],
+      exclusive: [
+        "Lunch (Veg & Non-Veg Options)",
+        "2 Rest Room Stops",
+        "🚙 Comfortable 4-Wheeler Transport",
+        "🐅 Valmikinagar Jungle Safari Experience",
+        "🧭 Local Tour Guide",
+        "🎟 All Sightseeing Entry Tickets Included",
+        "🍪 Evening Snacks & Refreshments",
+        "🌏 India – Nepal Border Visit Experience"
+      ]
     }
   },
 ];

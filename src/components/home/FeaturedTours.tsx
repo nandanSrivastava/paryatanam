@@ -127,11 +127,10 @@ export function FeaturedTours({ activeCategory = "explore" }: { activeCategory?:
                           </span>
                         </div>
 
-                        {/* Current Price */}
                         <div className="text-xl xs:text-2xl sm:text-3xl font-bold text-primary">
                           INR {(tour.perPersonPrice || tour.price).toLocaleString()}
                           <span className="text-sm font-normal text-neutral-500 ml-1">
-                            /{tour.perPersonPrice ? 'Adult' : 'Package'}
+                            /{tour.perPersonPrice ? 'Person' : 'Package'}
                           </span>
                         </div>
                       </div>

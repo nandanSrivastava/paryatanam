@@ -4,6 +4,7 @@ import {
   Twitter,
   Instagram,
   Linkedin,
+  Youtube,
   Mail,
   Phone,
   MapPin,
@@ -50,14 +51,17 @@ export function Footer() {
               </p>
               <div className="flex gap-2.5 sm:gap-3 pt-2">
                 {[
-                  { Icon: Facebook, href: "#" },
-                  { Icon: Twitter, href: "#" },
-                  { Icon: Instagram, href: "#" },
-                  { Icon: Linkedin, href: "#" },
+                  { Icon: Facebook, href: "https://www.facebook.com/paryatanamgo" },
+                  { Icon: Twitter, href: "https://x.com/ParyatanamGO" },
+                  { Icon: Instagram, href: "https://www.instagram.com/paryatanamgo/" },
+                  { Icon: Linkedin, href: "https://www.linkedin.com/company/paryatanam-go" },
+                  { Icon: Youtube, href: "https://www.youtube.com/@Paryatanam" },
                 ].map(({ Icon, href }, i) => (
                   <a
                     key={i}
                     href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="h-11 w-11 sm:h-12 sm:w-12 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center text-white/80 hover:bg-secondary hover:text-primary active:scale-95 sm:hover:scale-110 transition-all duration-300 border border-white/10 touch-manipulation"
                   >
                     <Icon className="w-5 h-5" />

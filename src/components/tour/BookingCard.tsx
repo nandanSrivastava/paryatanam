@@ -27,7 +27,8 @@ export function BookingCard({ tour }: BookingCardProps) {
   };
 
   const isFamily = tour.categoryId === "family-trip";
-  const divisor = isFamily ? 6 : 2; 
+  const isSchool = tour.categoryId === "school-group";
+  const divisor = isSchool ? 1 : (isFamily ? 6 : 2); 
 
   // If perPersonPrice is provided in data, use it for the primary display
   const adultPriceToDisplay = (packageType === "standard" || packageType === "value") && tour.perPersonPrice 
@@ -38,7 +39,7 @@ export function BookingCard({ tour }: BookingCardProps) {
   const discount = Math.round(((originalFullPrice - packagePrices[packageType]) / originalFullPrice) * 100);
 
   const [date, setDate] = useState<string>("");
-  const [travellers, setTravellers] = useState<string>(isFamily ? "6 Persons" : "2 Adults, 0 Children");
+  const [travellers, setTravellers] = useState<string>(isSchool ? "Min. 15 Persons" : (isFamily ? "6 Persons" : "2 Adults, 0 Children"));
   const today = new Date().toISOString().split("T")[0];
 
   const handleSendEnquiry = () => {
@@ -68,7 +69,7 @@ export function BookingCard({ tour }: BookingCardProps) {
               ₹{Math.round(adultPriceToDisplay).toLocaleString()}
             </span>
             <span className="text-sm sm:text-base text-white/80">
-              / per adult
+              / per person
             </span>
           </div>
           <p className="text-xs sm:text-sm text-white/70 flex items-center gap-2">
@@ -114,6 +115,22 @@ export function BookingCard({ tour }: BookingCardProps) {
               </button>
             ))}
           </div>
+
+          {/* Tier Details if any */}
+          {tour.tierDetails && tour.tierDetails[packageType] && (
+            <div className="mt-4 p-4 rounded-xl bg-neutral-50 border border-neutral-100 animate-in fade-in slide-in-from-top-2 duration-300">
+              <h4 className="text-[10px] font-bold text-primary uppercase tracking-wider mb-2">Package Inclusions:</h4>
+              <ul className="space-y-1.5">
+                {tour.tierDetails[packageType].map((detail, idx) => (
+                  <li key={idx} className="flex items-start gap-2 text-xs text-gray-600">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5 font-bold" />
+                    <span>{detail}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
           <button className="w-full mt-3 p-3 rounded-xl border-2 border-dashed border-gray-300 hover:border-primary hover:bg-primary/5 transition-all text-left group">
              <div className="flex items-center justify-between">
                <span className="text-xs font-bold uppercase text-gray-500 group-hover:text-primary transition-colors">Customize Your Package</span>
