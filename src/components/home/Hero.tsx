@@ -17,8 +17,15 @@ import {
   Shield,
   Map,
   Compass,
+  GraduationCap,
+  Globe,
+  Camera,
   ChevronLeft,
   ChevronRight,
+  Star,
+  Clock,
+  TrendingUp,
+  Phone,
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
@@ -37,6 +44,9 @@ const iconMap: { [key: string]: React.ReactNode } = {
   Shield: <Shield className="w-8 h-8 text-secondary" />,
   Map: <Map className="w-8 h-8 text-secondary" />,
   Compass: <Compass className="w-8 h-8 text-secondary" />,
+  GraduationCap: <GraduationCap className="w-8 h-8 text-secondary" />,
+  Globe: <Globe className="w-8 h-8 text-secondary" />,
+  Camera: <Camera className="w-8 h-8 text-secondary" />,
 };
 
 function HeroCarousel() {
