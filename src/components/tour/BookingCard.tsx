@@ -44,7 +44,7 @@ export function BookingCard({ tour }: BookingCardProps) {
 
   const handleSendEnquiry = () => {
     const phone = "919288202060";
-    const message = `Hi, I am doing Enquiry for ${tour.title} [${packageType.toUpperCase()} Package], with Travel Date: ${date || "Not specified"}, Travelers: ${travellers || "Not specified"} via: Paryatanam website`;
+    const message = `Hi Team Paryatanam, I am doing Enquiry for ${tour.title} [${packageType.toUpperCase()} Package], with Travel Date: ${date || "Not specified"}, Travelers: ${travellers || "Not specified"} via: Paryatanam website`;
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.location.href = url;
   };

@@ -16,8 +16,9 @@ export default function Home() {
     <main className="min-h-screen flex flex-col">
       <Navbar />
       <Hero />
-      <CategoryBar activeCategory={activeCategory} onCategoryChange={setActiveCategory} />
+      
       <Destinations />
+      <CategoryBar activeCategory={activeCategory} onCategoryChange={setActiveCategory} />
       <FeaturedTours activeCategory={activeCategory} />
       <WhyChooseUs />
       <Testimonials />

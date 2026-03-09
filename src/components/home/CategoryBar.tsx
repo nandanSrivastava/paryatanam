@@ -112,7 +112,7 @@ export function CategoryBar({
   };
 
   return (
-    <div className="sticky top-[var(--navbar-height)] z-40 bg-white/95 backdrop-blur-sm border-b border-neutral-100">
+    <div className="sticky top-[var(--navbar-height)] z-40 bg-white/95 backdrop-blur-sm border-b border-neutral-100 sm:pt-3">
       <div className="container mx-auto px-4 md:px-6 relative group">
         
         {/* Left Arrow - desktop visible only when needed */}
@@ -131,7 +131,7 @@ export function CategoryBar({
         {/* Categories List */}
         <div
           ref={scrollRef}
-          className="flex items-center md:justify-center gap-10 md:gap-16 overflow-x-auto no-scrollbar scroll-smooth py-6 px-1"
+          className="flex items-center md:justify-center gap-10 md:gap-16 overflow-x-auto no-scrollbar scroll-smooth py-8 md:py-8 px-1"
         >
           {categories.map((category) => (
             <button
@@ -154,9 +154,9 @@ export function CategoryBar({
                 </div>
                 
                 {category.isTrending && (
-                  <div className="absolute -top-4 -right-8">
-                    <div className="bg-orange-500 text-white text-[9px] font-bold px-2 py-0.5 rounded-full shadow-md flex items-center gap-0.5 border border-white">
-                      <TrendingUp className="w-2.5 h-2.5" />
+                  <div className="absolute -top-5 -left-1 md:-left-2">
+                    <div className="bg-orange-500 text-white text-[8px] md:text-[9px] font-bold px-1.5 py-0.5 rounded-md shadow-md flex items-center gap-0.5 border border-white whitespace-nowrap">
+                      <TrendingUp className="w-2 h-2 md:w-2.5 md:h-2.5" />
                       TRENDING
                     </div>
                   </div>
