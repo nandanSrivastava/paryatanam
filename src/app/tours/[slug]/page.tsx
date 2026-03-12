@@ -27,7 +27,7 @@ export default async function TourDetailPage({
       <Navbar />
 
       {/* Hero Section */}
-      <div className="relative bg-gradient-primary text-white pt-28 sm:pt-32 pb-12 sm:pb-16 md:pb-20">
+      <div className="relative bg-gradient-primary text-white pt-24 sm:pt-28 pb-8 sm:pb-12 md:pb-14">
         <div className="absolute inset-0 pattern-dots opacity-5 sm:opacity-10" />
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           {/* Breadcrumb */}
@@ -44,21 +44,21 @@ export default async function TourDetailPage({
           </div>
 
           <div className="max-w-4xl">
-            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-4 sm:mb-6 leading-tight">
+            <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-3 sm:mb-4 leading-tight">
               {tour.title}
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mb-6 sm:mb-8 leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-white/90 max-w-3xl mb-4 sm:mb-6 leading-relaxed">
               {tour.subtitle}
             </p>
 
             {/* Meta Info */}
-            <div className="flex flex-wrap items-center gap-2.5 sm:gap-4 md:gap-6">
-              <div className="flex items-center gap-1.5 sm:gap-2 bg-white/15 backdrop-blur-sm px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 md:py-3 rounded-full border border-white/20">
-                <div className="bg-secondary text-primary text-xs sm:text-sm font-bold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-lg flex items-center gap-1">
-                  <Star className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4">
+              <div className="flex items-center gap-1.5 sm:gap-2 bg-white/15 backdrop-blur-sm px-2.5 sm:px-3.5 md:px-4 py-1.5 sm:py-2 md:py-2.5 rounded-full border border-white/20">
+                <div className="bg-secondary text-primary text-[10px] sm:text-xs font-bold px-1.5 sm:px-2 py-0.5 rounded-lg flex items-center gap-1">
+                  <Star className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 text-primary" />
                   {tour.rating}
                 </div>
-                <span className="text-white/90 font-medium text-xs sm:text-sm md:text-base">
+                <span className="text-white/90 font-medium text-[10px] sm:text-xs md:text-sm">
                   <span className="hidden xs:inline">
                     ({tour.reviews} Reviews)
                   </span>
@@ -66,23 +66,23 @@ export default async function TourDetailPage({
                 </span>
               </div>
 
-              <div className="flex items-center gap-1.5 sm:gap-2 bg-white/15 backdrop-blur-sm px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 md:py-3 rounded-full border border-white/20">
-                <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-secondary shrink-0" />
-                <span className="font-medium text-xs sm:text-sm md:text-base truncate">
+              <div className="flex items-center gap-1.5 bg-white/15 backdrop-blur-sm px-2.5 sm:px-3.5 md:px-4 py-1.5 sm:py-2 md:py-2.5 rounded-full border border-white/20">
+                <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-secondary shrink-0" />
+                <span className="font-medium text-[10px] sm:text-xs md:text-sm truncate">
                   {tour.location}
                 </span>
               </div>
 
-              <div className="flex items-center gap-1.5 sm:gap-2 bg-white/15 backdrop-blur-sm px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 md:py-3 rounded-full border border-white/20">
-                <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-secondary shrink-0" />
-                <span className="font-medium text-xs sm:text-sm md:text-base">
+              <div className="flex items-center gap-1.5 bg-white/15 backdrop-blur-sm px-2.5 sm:px-3.5 md:px-4 py-1.5 sm:py-2 md:py-2.5 rounded-full border border-white/20">
+                <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-secondary shrink-0" />
+                <span className="font-medium text-[10px] sm:text-xs md:text-sm">
                   {tour.duration}
                 </span>
               </div>
 
-              <div className="flex items-center gap-1.5 sm:gap-2 bg-white/15 backdrop-blur-sm px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 md:py-3 rounded-full border border-white/20">
-                <Users className="w-4 h-4 sm:w-5 sm:h-5 text-secondary shrink-0" />
-                <span className="font-medium text-xs sm:text-sm md:text-base">
+              <div className="flex items-center gap-1.5 bg-white/15 backdrop-blur-sm px-2.5 sm:px-3.5 md:px-4 py-1.5 sm:py-2 md:py-2.5 rounded-full border border-white/20">
+                <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-secondary shrink-0" />
+                <span className="font-medium text-[10px] sm:text-xs md:text-sm">
                   {tour.minPeople}
                 </span>
               </div>

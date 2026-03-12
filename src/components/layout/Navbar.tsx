@@ -14,6 +14,8 @@ const navLinks = [
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const openWhatsApp = (e?: any) => {
     if (e) {
@@ -25,16 +27,27 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      const currentScrollY = window.scrollY;
+      
+      // Update scrolled state for styling
+      setIsScrolled(currentScrollY > 10);
+
+      // Show navbar only at the very top, otherwise hide it
+      if (currentScrollY < 10) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
     };
-    window.addEventListener("scroll", handleScroll);
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <>
       {/* Small Screen - Logo Only */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 z-50 py-3 sm:py-4 px-4 md:px-6 flex items-center justify-center bg-white/90 backdrop-blur-md shadow-md">
+      <div className="lg:hidden absolute top-0 left-0 right-0 z-50 py-3 sm:py-4 px-4 md:px-6 flex items-center justify-center bg-white/90 backdrop-blur-md shadow-md">
         <Link href="https://paryatanam.com" className="flex items-center gap-3 group">
           <img
             src="/paryatanam-logo-png.png"
@@ -47,10 +60,7 @@ export function Navbar() {
       {/* Large Screen - Full Navbar */}
       <nav
         className={cn(
-          "hidden lg:block fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-          isScrolled
-            ? "bg-white/95 backdrop-blur-lg shadow-luxury py-2 sm:py-3"
-            : "bg-white/90 backdrop-blur-md shadow-md py-3 sm:py-4",
+          "hidden lg:block absolute top-0 left-0 right-0 z-50 transition-all duration-500 bg-white/90 backdrop-blur-md shadow-md py-3 sm:py-4"
         )}
       >
         <div className="container mx-auto px-4 md:px-6">
@@ -88,7 +98,7 @@ export function Navbar() {
                 className="flex items-center gap-2 px-4 py-2 rounded-full transition-all font-medium text-sm hover:bg-neutral-100 text-neutral-800 outline-1"
               >
                 <Phone className="w-4 h-4" />
-                <span>+91 9288202060</span>
+                <span>+91 92882 02060</span>
               </a>
               <Button
                 variant="primary"

@@ -27,45 +27,45 @@ const categories: Category[] = [
   {
     id: "explore",
     name: "Explore All",
-    icon: <Compass className="w-6 h-6" strokeWidth={1.5} />,
+    icon: <Compass className="w-5 h-5" strokeWidth={1.5} />,
   },
   {
     id: "couple-trip",
     name: "Couple Trip",
-    icon: <Heart className="w-6 h-6" strokeWidth={1.5} />,
+    icon: <Heart className="w-5 h-5" strokeWidth={1.5} />,
     isTrending: true,
   },
   {
     id: "family-trip",
     name: "Family Trip",
-    icon: <Users className="w-6 h-6" strokeWidth={1.5} />,
+    icon: <Users className="w-5 h-5" strokeWidth={1.5} />,
   },
   {
     id: "school-group",
     name: "School Group",
-    icon: <GraduationCap className="w-6 h-6" strokeWidth={1.5} />,
+    icon: <GraduationCap className="w-5 h-5" strokeWidth={1.5} />,
   },
   {
     id: "indo-nepal",
     name: "Indo Nepal",
-    icon: <Globe className="w-6 h-6" strokeWidth={1.5} />,
+    icon: <Globe className="w-5 h-5" strokeWidth={1.5} />,
     isTrending: true,
   },
   {
     id: "adventure",
     name: "Adventure",
-    icon: <Zap className="w-6 h-6" strokeWidth={1.5} />,
+    icon: <Zap className="w-5 h-5" strokeWidth={1.5} />,
     isTrending: true,
   },
   {
     id: "nature",
     name: "Nature",
-    icon: <Mountain className="w-6 h-6" strokeWidth={1.5} />,
+    icon: <Mountain className="w-5 h-5" strokeWidth={1.5} />,
   },
   {
     id: "sightseeing",
     name: "Sightseeing",
-    icon: <Camera className="w-6 h-6" strokeWidth={1.5} />,
+    icon: <Camera className="w-5 h-5" strokeWidth={1.5} />,
   },
 ];
 
@@ -112,7 +112,7 @@ export function CategoryBar({
   };
 
   return (
-    <div className="sticky top-[var(--navbar-height)] z-40 bg-white/95 backdrop-blur-sm border-b border-neutral-100 sm:pt-3">
+    <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-neutral-100 sm:pt-3">
       <div className="container mx-auto px-4 md:px-6 relative group">
         
         {/* Left Arrow - desktop visible only when needed */}
@@ -131,17 +131,17 @@ export function CategoryBar({
         {/* Categories List */}
         <div
           ref={scrollRef}
-          className="flex items-center md:justify-center gap-10 md:gap-16 overflow-x-auto no-scrollbar scroll-smooth py-8 md:py-8 px-1"
+          className="flex items-center md:justify-center gap-10 md:gap-16 overflow-x-auto no-scrollbar scroll-smooth py-3 md:py-4 px-1"
         >
           {categories.map((category) => (
             <button
               key={category.id}
               onClick={() => onCategoryChange(category.id)}
               className={cn(
-                "flex flex-col items-center gap-3 transition-all duration-300 relative group/item shrink-0 pb-1.5",
+                "flex flex-col items-center gap-2 transition-all duration-300 relative group/item shrink-0 pb-2",
                 activeCategory === category.id 
-                  ? "text-primary border-b-2 border-primary" 
-                  : "text-neutral-500 hover:text-neutral-900 border-b-2 border-transparent"
+                  ? "text-primary border-b-[3px] border-primary" 
+                  : "text-neutral-500 hover:text-neutral-900 border-b-[3px] border-transparent"
               )}
             >
               {/* Icon Container with Badge */}

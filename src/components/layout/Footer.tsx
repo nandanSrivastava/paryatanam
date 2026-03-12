@@ -16,7 +16,7 @@ import { Input } from "@/components/ui/Input";
 export function Footer() {
   return (
     <footer
-      className="text-white relative overflow-hidden"
+      className="text-white relative overflow-hidden px-5"
       style={{
         backgroundImage: "url('/images/footer-image.png')",
         backgroundSize: "cover",
@@ -33,8 +33,8 @@ export function Footer() {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Main Footer Content */}
-        <div className="pt-16 sm:pt-20 pb-10 sm:pb-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 mb-12 sm:mb-16">
+        <div className="pt-16 sm:pt-10 pb-1 sm:pb-1">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 mb-8 sm:mb-10">
             {/* Brand Column */}
             <div className="space-y-5 sm:space-y-6 lg:col-span-1">
               <Link href="https://www.paryatanam.com" className="flex items-center gap-3 group">
@@ -49,14 +49,23 @@ export function Footer() {
                 Adventure in every step, culture in every story, and nature in
                 every breath. Paryatanam curates meaningful Indo-Nepal journeys.
               </p>
-              <div className="flex gap-2.5 sm:gap-3 pt-2">
+              <div className="flex gap-1.5 sm:gap-1 pt-2">
                 {[
-                  { Icon: Facebook, href: "https://www.facebook.com/paryatanamgo" },
-                  { Icon: Twitter, href: "https://x.com/ParyatanamGO" },
-                  { Icon: Instagram, href: "https://www.instagram.com/paryatanamgo/" },
-                  { Icon: Linkedin, href: "https://www.linkedin.com/company/paryatanam-go" },
-                  { Icon: Youtube, href: "https://www.youtube.com/@Paryatanam" },
-                ].map(({ Icon, href }, i) => (
+                  { icon: <Facebook className="w-4 h-4" />, href: "https://www.facebook.com/paryatanamgo" },
+                  { icon: <Twitter className="w-4 h-4" />, href: "https://x.com/ParyatanamGO" },
+                  { icon: <Instagram className="w-4 h-4" />, href: "https://www.instagram.com/paryatanamgo/" },
+                  { icon: <Linkedin className="w-4 h-4" />, href: "https://www.linkedin.com/company/paryatanam-go" },
+                  { icon: (
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="w-4 h-4 fill-current"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.966 1.406-5.966s-.359-.72-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.261 7.929-7.261 4.162 0 7.398 2.965 7.398 6.93 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.031-1.002 2.324-1.492 3.121 1.125.347 2.314.535 3.543.535 6.621 0 11.988-5.365 11.988-11.987C23.987 5.367 18.621 0 12.017 0z"/>
+                    </svg>
+                  ), href: "https://www.pinterest.com/paryatanamtgo/" },
+                  { icon: <Youtube className="w-4 h-4" />, href: "https://www.youtube.com/@Paryatanam" },
+                ].map(({ icon, href }, i) => (
                   <a
                     key={i}
                     href={href}
@@ -64,7 +73,7 @@ export function Footer() {
                     rel="noopener noreferrer"
                     className="h-11 w-11 sm:h-12 sm:w-12 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center text-white/80 hover:bg-secondary hover:text-primary active:scale-95 sm:hover:scale-110 transition-all duration-300 border border-white/10 touch-manipulation"
                   >
-                    <Icon className="w-5 h-5" />
+                    {icon}
                   </a>
                 ))}
               </div>
@@ -165,7 +174,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 pt-8 sm:pt-10 pb-6 sm:pb-8">
+        <div className="border-t border-white/10 pt-6 sm:pt-8 pb-4 sm:pb-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-5 sm:gap-6">
             <p className="text-white/70 text-xs sm:text-sm text-center md:text-left">
               © {new Date().getFullYear()} Paryatanam. All rights reserved.

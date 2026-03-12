@@ -17,9 +17,10 @@ export default function Home() {
       <Navbar />
       <Hero />
       
-      <Destinations />
+      
       <CategoryBar activeCategory={activeCategory} onCategoryChange={setActiveCategory} />
       <FeaturedTours activeCategory={activeCategory} />
+      <Destinations />
       <WhyChooseUs />
       <Testimonials />
       <Footer />

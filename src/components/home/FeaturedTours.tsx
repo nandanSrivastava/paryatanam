@@ -22,7 +22,7 @@ export function FeaturedTours({ activeCategory = "explore" }: { activeCategory?:
     <>
       <section
         id="featured-packages"
-        className="py-16 sm:py-20 md:py-24 px-4 md:px-6 bg-white relative overflow-hidden"
+        className="py-4 sm:py-8 md:py-10 px-6 md:px-14 bg-white relative overflow-hidden"
       >
         {/* Animated Grid Pattern */}
         <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]">
@@ -30,15 +30,15 @@ export function FeaturedTours({ activeCategory = "explore" }: { activeCategory?:
         </div>
 
         <div className="container mx-auto relative z-10">
-          <div className="text-center mb-12 sm:mb-16 md:mb-20">
-            <div className="inline-flex items-center gap-2 text-secondary font-bold tracking-[0.15em] sm:tracking-[0.2em] uppercase text-xs sm:text-sm bg-secondary/10 px-4 sm:px-6 py-2 sm:py-2.5 rounded-full mb-4 sm:mb-5">
+          <div className="text-center mb-4 sm:mb-6">
+            <div className="inline-flex items-center gap-2 text-secondary font-bold tracking-[0.15em] sm:tracking-[0.2em] uppercase text-[10px] sm:text-xs bg-secondary/10 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full mb-1 sm:mb-2">
               <TrendingUp className="w-3.5 h-3.5" />
               <span className="hidden xs:inline">
                 {activeCategory === "explore" ? "Best Selling Packages" : `${activeCategory.replace("-", " ")} Packages`}
               </span>
               <span className="xs:hidden">Best Packages</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary mt-3 sm:mt-4 leading-tight px-4 capitalize">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-primary mt-1 sm:mt-2 leading-tight px-4 capitalize">
               {activeCategory === "explore" ? "Indo-Nepal Tour Packages" : `${activeCategory.replace("-", " ")} Experiences`}
             </h2>
             <div className="w-24 sm:w-32 h-1 sm:h-1.5 bg-gradient-to-r from-transparent via-secondary to-transparent mx-auto mt-6 sm:mt-8 rounded-full" />
@@ -49,7 +49,7 @@ export function FeaturedTours({ activeCategory = "explore" }: { activeCategory?:
           </div>
 
           {filteredTours.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
               {filteredTours.map((tour, index) => {
                 const savingsAmount = tour.originalPrice - tour.price;
 
@@ -57,15 +57,16 @@ export function FeaturedTours({ activeCategory = "explore" }: { activeCategory?:
                   <Link
                     href={`/tours/${tour.slug}`}
                     key={tour.id}
-                    className="group bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out active:scale-[0.98] sm:hover:-translate-y-2 border border-neutral-100 block touch-manipulation animate-in fade-in slide-in-from-bottom-4 duration-500"
+                    className="group bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out active:scale-[0.98] sm:hover:-translate-y-2 border border-neutral-100 flex flex-col h-full touch-manipulation animate-in fade-in slide-in-from-bottom-4 duration-500"
                     style={{ animationDelay: `${index * 150}ms` }}
                   >
-                    <div className="relative h-56 xs:h-64 sm:h-72 md:h-80 overflow-hidden">
-                      <div
-                        className="absolute inset-0 bg-cover bg-center transition-transform duration-500 ease-in-out group-hover:scale-105"
-                        style={{ backgroundImage: `url(${tour.images[0]})` }}
+                    <div className="relative aspect-[4/3] sm:aspect-video md:aspect-[4/3] lg:aspect-[3/2] overflow-hidden">
+                      <img
+                        src={tour.images[0]}
+                        alt={tour.title}
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-100 group-hover:from-black/70 transition-all duration-300" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-100 group-hover:from-black/70 transition-all duration-300" />
 
                       {/* Popular Badge */}
                       {(index === 0 || tour.rating >= 4.9) && (
@@ -82,72 +83,70 @@ export function FeaturedTours({ activeCategory = "explore" }: { activeCategory?:
                       </div>
 
                       {/* Duration at bottom of image */}
-                      <div className="absolute bottom-4 left-4 text-white text-sm font-semibold">
+                      {/* <div className="absolute bottom-4 left-4 text-white text-sm font-semibold">
                         {tour.duration}
-                      </div>
+                      </div> */}
                     </div>
 
-                    <div className="p-5 sm:p-6 md:p-7">
+                    <div className="p-4 sm:p-5 md:p-6 flex-1 flex flex-col">
                       {/* Star Rating with Reviews */}
-                      <div className="flex items-center gap-1 mb-3">
-                        <Star className="w-4 h-4 fill-secondary text-secondary" />
-                        <span className="text-sm font-bold text-primary">
-                          {tour.rating}
-                        </span>
-                        <span className="text-sm text-neutral-500">
-                          ({tour.reviews})
-                        </span>
+                      <div className="flex items-center justify-between gap-2 mb-2">
+                        <div className="flex items-center gap-1">
+                          <Star className="w-3.5 h-3.5 fill-secondary text-secondary" />
+                          <span className="text-xs font-bold text-primary">
+                            {tour.rating}
+                          </span>
+                          <span className="text-xs text-neutral-500">
+                            ({tour.reviews})
+                          </span>
+                        </div>
+                        
+                        <div className="flex items-center gap-1 text-neutral-500 text-[10px] sm:text-xs font-semibold">
+                          <Clock className="w-3 h-3 text-secondary shrink-0" />
+                          <span>{tour.duration}</span>
+                        </div>
                       </div>
 
-                      <h3 className="text-lg xs:text-xl sm:text-2xl font-bold text-neutral-800 mb-2 sm:mb-3 font-serif group-hover:text-primary transition-colors duration-300 leading-tight">
+                      <h3 className="text-lg font-bold text-neutral-800 font-serif group-hover:text-primary transition-colors duration-300 leading-tight line-clamp-2 min-h-[2.5rem]">
                         {tour.title}
                       </h3>
 
-                      {/* Location with bullet formatting */}
-                      <div className="flex items-center gap-1.5 text-neutral-500 text-xs sm:text-sm font-semibold mb-3">
-                        <MapPin className="w-3.5 h-3.5 text-secondary" />
-                        <span>
-                          {tour.location} • {tour.duration}
-                        </span>
-                      </div>
-
-                      <p className="text-xs xs:text-sm text-neutral-600 line-clamp-2 leading-relaxed mb-4">
+                      <p className="text-sm xs:text-base text-neutral-600 line-clamp-2 leading-relaxed mb-3">
                         {tour.subtitle}
                       </p>
 
                       {/* Pricing Section */}
-                      <div className="space-y-3 mb-5">
-                        {/* Original Price with Strike-through */}
+                      <div className="space-y-2 mb-4 mt-auto">
                         <div className="flex items-center gap-2">
-                          <span className="text-sm text-neutral-400 line-through">
+                          <span className="text-[10px] sm:text-xs text-neutral-400 line-through">
                             INR {tour.originalPrice.toLocaleString()}
                           </span>
-                          <span className="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded">
+                          <span className="text-[9px] sm:text-[10px] font-bold text-green-600 bg-green-50 px-1.5 py-0.5 rounded">
                             SAVE INR {savingsAmount.toLocaleString()}
                           </span>
                         </div>
 
-                        <div className="text-xl xs:text-2xl sm:text-3xl font-bold text-primary">
+                        <div className="text-lg xs:text-xl sm:text-2xl font-bold text-primary">
                           INR {(tour.perPersonPrice || tour.price).toLocaleString()}
-                          <span className="text-sm font-normal text-neutral-500 ml-1">
+                          <span className="text-xs font-normal text-neutral-500 ml-1">
                             /{tour.perPersonPrice ? 'Person' : 'Package'}
                           </span>
                         </div>
                       </div>
 
                       {/* Action Buttons */}
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-2">
                         <button
-                          type="button"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            e.preventDefault();
-                            window.location.href = "tel:+919288202060";
-                          }}
-                          aria-label="Call +91 9288202060"
-                          className="inline-flex items-center justify-center rounded-full border border-primary/30 text-primary hover:bg-primary hover:text-white transition-all duration-300 flex-shrink-0 h-10 w-10 p-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 outline-1"
+                           type="button"
+                           onClick={(e) => {
+                             e.stopPropagation();
+                             e.preventDefault();
+                             window.location.href = "tel:+919288202060";
+                           }}
+                           aria-label="Call +91 9288202060"
+                           className="inline-flex items-center justify-center rounded-full border border-primary/30 text-primary hover:bg-primary hover:text-white transition-all duration-300 flex-shrink-0 h-9 w-9 p-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 outline-1"
                         >
-                          <Phone className="w-4 h-4" />
+                          <Phone className="w-3.5 h-3.5" />
                         </button>
                         <Button
                           onClick={(e: React.MouseEvent) => {
@@ -155,7 +154,7 @@ export function FeaturedTours({ activeCategory = "explore" }: { activeCategory?:
                             e.preventDefault();
                             setIsModalOpen(true);
                           }}
-                          className="flex-1 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                          className="flex-1 h-9 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white rounded-full font-semibold shadow-md hover:shadow-lg transition-all duration-300 text-xs sm:text-sm"
                         >
                           Request Callback
                         </Button>
@@ -184,8 +183,9 @@ export function FeaturedTours({ activeCategory = "explore" }: { activeCategory?:
               </Button>
             </div>
           )}
+          <hr className="mx-auto mt-10 border-neutral-200" />
 
-          <div className="mt-8 sm:mt-10 md:mt-12 text-center">
+          {/* <div className="mt-8 sm:mt-10 md:mt-12 text-center">
             <Link href={`/tours/${tourPackages[0].slug}`}>
               <Button
                 size="lg"
@@ -195,7 +195,7 @@ export function FeaturedTours({ activeCategory = "explore" }: { activeCategory?:
                 Enquire Now
               </Button>
             </Link>
-          </div>
+          </div> */}
         </div>
       </section>
       {/* Callback Modal (form moved into the modal component) */}
