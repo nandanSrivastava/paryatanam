@@ -19,16 +19,16 @@ export function Testimonials() {
   }
 
   return (
-    <section id="testimonials" className="py-20 bg-neutral-50 px-4 md:px-6">
+    <section id="testimonials" className="py-8 sm:py-12 bg-neutral-50 px-4 md:px-6">
       <div className="container mx-auto">
-        <div className="text-center mb-12">
-          <span className="text-secondary font-bold tracking-wider uppercase text-sm">
+        <div className="text-center mb-8">
+          <span className="text-secondary font-bold tracking-wider uppercase text-xs sm:text-sm">
             What Our Guests Say
           </span>
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mt-2">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-primary mt-1">
             Testimonials
           </h2>
-          <div className="w-24 h-1 bg-secondary mx-auto mt-6 rounded-full" />
+          <div className="w-24 h-1 bg-secondary mx-auto mt-4 rounded-full" />
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

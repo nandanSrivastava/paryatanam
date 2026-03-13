@@ -31,17 +31,17 @@ const destinations = [
 
 export function Destinations() {
   return (
-    <section className="py-16 sm:py-20 md:py-24 bg-white">
+    <section className=" bg-white">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="mx-auto mb-12 sm:mb-14 md:mb-16 max-w-4xl text-center">
-          <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-secondary bg-secondary/10 px-4 sm:px-6 py-2 rounded-full mb-3 sm:mb-4">
+        <div className="mx-auto mb-6 sm:mb-10 max-w-4xl text-center">
+          <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-secondary bg-secondary/10 px-4 sm:px-6 py-2 rounded-full mb-2 sm:mb-4">
             Explore the Beauty
           </span>
-          <h2 className="mt-3 sm:mt-4 text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-primary leading-tight">
+          <h2 className="mt-1 sm:mt-2 text-xl sm:text-2xl md:text-3xl font-serif font-bold text-primary leading-tight">
             Valmikinagar & Nepal Highlights
           </h2>
-          <div className="w-24 sm:w-32 h-1 sm:h-1.5 bg-gradient-to-r from-transparent via-secondary to-transparent mx-auto mt-6 sm:mt-8 rounded-full" />
-          <p className="mt-6 sm:mt-8 text-neutral-700 text-base md:text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto">
+          <div className="w-24 sm:w-32 h-1 sm:h-1.5 bg-gradient-to-r from-transparent via-secondary to-transparent mx-auto mt-4 sm:mt-6 rounded-full" />
+          <p className="mt-4 sm:mt-5 text-neutral-700 text-base md:text-md lg:text-lg leading-relaxed max-w-3xl mx-auto">
             {brandContent.journeyDescription}
           </p>
         </div>
@@ -73,9 +73,9 @@ export function Destinations() {
         </div>
 
         <div className="text-center mt-12">
-          <Button size="lg" variant="primary" className="shadow-lg">
+          {/* <Button size="lg" variant="primary" className="shadow-lg">
             View All Tours
-          </Button>
+          </Button> */}
         </div>
       </div>
     </section>

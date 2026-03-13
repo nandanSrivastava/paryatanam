@@ -6,28 +6,46 @@ import {
   CheckCircle2,
   Sparkles,
   TrendingDown,
+  ArrowRight,
 } from "lucide-react";
 import { useState } from "react";
 import { TourPackage } from "@/lib/data";
+import { cn } from "@/lib/utils";
 
 interface BookingCardProps {
   tour: TourPackage;
 }
 
 export function BookingCard({ tour }: BookingCardProps) {
-  const discount = Math.round(
-    ((tour.originalPrice - tour.price) / tour.originalPrice) * 100,
-  );
+  const [packageType, setPackageType] = useState<"standard" | "value" | "premium" | "exclusive">("value");
+  
+  const packagePrices = tour.tierPrices || {
+    exclusive: tour.price * 1.5,
+    premium: tour.price * 1.2,
+    value: tour.price,
+    standard: tour.price * 0.9
+  };
+
+  const isFamily = tour.categoryId === "family-trip";
+  const isSchool = tour.categoryId === "school-group";
+  const divisor = isSchool ? 1 : (isFamily ? 6 : 2); 
+
+  // If perPersonPrice is provided in data, use it for the primary display
+  const adultPriceToDisplay = (packageType === "standard" || packageType === "value") && tour.perPersonPrice 
+    ? tour.perPersonPrice 
+    : Math.round(packagePrices[packageType] / divisor);
+
+  const originalFullPrice = packagePrices[packageType] * 1.2;
+  const discount = Math.round(((originalFullPrice - packagePrices[packageType]) / originalFullPrice) * 100);
+
   const [date, setDate] = useState<string>("");
-  const [travellers, setTravellers] = useState<string>("2 Adults, 0 Children");
+  const [travellers, setTravellers] = useState<string>(isSchool ? "Min. 15 Persons" : (isFamily ? "6 Persons" : "2 Adults, 0 Children"));
   const today = new Date().toISOString().split("T")[0];
 
   const handleSendEnquiry = () => {
-    const phone = "919288202060"; // WhatsApp number in international format without +
-    const message = `Hi, I am doing Enquiry for ${tour.title}, with Travel Date: ${date || "Not specified"}, with the number of Travelers: ${travellers || "Not specified"} and This is Requested via: Paryatanam website`;
-    // use wa.me link
+    const phone = "919288202060";
+    const message = `Hi Team Paryatanam, I am doing Enquiry for ${tour.title} [${packageType.toUpperCase()} Package], with Travel Date: ${date || "Not specified"}, Travelers: ${travellers || "Not specified"} via: Paryatanam website`;
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-    // Redirect user to WhatsApp
     window.location.href = url;
   };
 
@@ -43,15 +61,15 @@ export function BookingCard({ tour }: BookingCardProps) {
               {discount}% OFF
             </span>
             <span className="text-white/70 line-through text-sm sm:text-base">
-              ₹{tour.originalPrice.toLocaleString()}
+              ₹{Math.round(originalFullPrice / divisor).toLocaleString()}
             </span>
           </div>
           <div className="flex flex-wrap items-baseline gap-2 mb-2">
             <span className="text-3xl xs:text-4xl sm:text-5xl font-bold">
-              ₹{tour.price.toLocaleString()}
+              ₹{Math.round(adultPriceToDisplay).toLocaleString()}
             </span>
             <span className="text-sm sm:text-base text-white/80">
-              / per adult
+              / per person
             </span>
           </div>
           <p className="text-xs sm:text-sm text-white/70 flex items-center gap-2">
@@ -63,6 +81,65 @@ export function BookingCard({ tour }: BookingCardProps) {
 
       {/* Booking Form */}
       <div className="p-5 sm:p-6 md:p-8 space-y-5 sm:space-y-6">
+        
+        {/* Package Type Selection */}
+        <div>
+          <label className="block text-xs font-bold uppercase text-gray-600 mb-3 tracking-wider">
+            Type of Tour - Your Journey, Your Comfort
+          </label>
+          <div className="grid grid-cols-2 gap-2">
+            {[
+              { id: 'exclusive', label: 'Exclusive', sub: 'Elite Trip' },
+              { id: 'premium', label: 'Premium', sub: 'High-quality experience' },
+              { id: 'value', label: 'Value', sub: 'Better comfort' },
+              { id: 'standard', label: 'Standard', sub: 'Budget travellers' },
+            ].map((pkg) => (
+              <button
+                key={pkg.id}
+                onClick={() => setPackageType(pkg.id as any)}
+                className={cn(
+                  "p-3 rounded-xl border-2 transition-all text-left flex flex-col gap-0.5",
+                  packageType === pkg.id 
+                    ? `border-primary bg-primary/5 shadow-inner` 
+                    : "border-gray-100 hover:border-gray-300"
+                )}
+              >
+                <div className="flex items-center justify-between">
+                  <span className={cn("text-xs font-bold uppercase", packageType === pkg.id ? "text-primary" : "text-gray-500")}>
+                    {pkg.label}
+                  </span>
+                  {packageType === pkg.id && <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />}
+                </div>
+                <span className="text-sm font-bold text-gray-900">₹{packagePrices[pkg.id as keyof typeof packagePrices].toLocaleString()}</span>
+                <span className="text-[10px] text-gray-500 font-medium">→ {pkg.sub}</span>
+              </button>
+            ))}
+          </div>
+
+          {/* Tier Details if any */}
+          {tour.tierDetails && tour.tierDetails[packageType] && (
+            <div className="mt-4 p-4 rounded-xl bg-neutral-50 border border-neutral-100 animate-in fade-in slide-in-from-top-2 duration-300">
+              <h4 className="text-[10px] font-bold text-primary uppercase tracking-wider mb-2">Package Inclusions:</h4>
+              <ul className="space-y-1.5">
+                {tour.tierDetails[packageType].map((detail, idx) => (
+                  <li key={idx} className="flex items-start gap-2 text-xs text-gray-600">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5 font-bold" />
+                    <span>{detail}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <button className="w-full mt-3 p-3 rounded-xl border-2 border-dashed border-gray-300 hover:border-primary hover:bg-primary/5 transition-all text-left group">
+             <div className="flex items-center justify-between">
+               <span className="text-xs font-bold uppercase text-gray-500 group-hover:text-primary transition-colors">Customize Your Package</span>
+               <ArrowRight className="w-3 h-3 text-gray-400 group-hover:text-primary transition-colors" />
+             </div>
+             <p className="text-[10px] text-gray-500 mt-0.5">Enter travel preferences for personalized itinerary</p>
+          </button>
+        </div>
+
         {/* Date Selector */}
         <div>
           <label className="block text-xs font-bold uppercase text-gray-600 mb-2.5 sm:mb-3 tracking-wider">
