@@ -112,7 +112,7 @@ export function CategoryBar({
   };
 
   return (
-    <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-neutral-100 sm:pt-3">
+    <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-neutral-100 pt-4 md:pt-5">
       <div className="container mx-auto px-4 md:px-6 relative group">
         
         {/* Left Arrow - desktop visible only when needed */}
@@ -131,7 +131,7 @@ export function CategoryBar({
         {/* Categories List */}
         <div
           ref={scrollRef}
-          className="flex items-center md:justify-center gap-10 md:gap-16 overflow-x-auto no-scrollbar scroll-smooth py-3 md:py-4 px-1"
+          className="flex items-center md:justify-center gap-10 md:gap-16 overflow-x-auto no-scrollbar scroll-smooth pt-7 pb-3 md:pt-8 md:pb-4 px-1"
         >
           {categories.map((category) => (
             <button
