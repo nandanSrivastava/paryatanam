@@ -30,7 +30,7 @@ export function BookingCard({ tour }: BookingCardProps) {
   const isSchool = tour.categoryId === "school-group";
   const divisor = isSchool ? 1 : (isFamily ? 6 : 2); 
 
-  // If perPersonPrice is provided in data, use it for the primary display
+  
   const adultPriceToDisplay = (packageType === "standard" || packageType === "value") && tour.perPersonPrice 
     ? tour.perPersonPrice 
     : Math.round(packagePrices[packageType] / divisor);
