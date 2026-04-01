@@ -56,6 +56,7 @@ export function BookingCard({ tour }: BookingCardProps) {
         <div className="hidden sm:block absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full blur-2xl" />
         <div className="relative z-10">
           <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-3">
+            
             <span className="flex items-center gap-1.5 text-xs sm:text-sm bg-gradient-secondary px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-primary font-bold shadow-lg">
               <TrendingDown className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               {discount}% OFF
