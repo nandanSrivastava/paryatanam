@@ -80,7 +80,7 @@ export function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-neutral-800 text-sm font-semibold transition-all hover:text-secondary relative group"
+                  className="text-neutral-800 text-lg font-bold transition-all hover:text-secondary relative group"
                 >
                   {link.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all group-hover:w-full" />
@@ -95,7 +95,7 @@ export function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={openWhatsApp}
-                className="flex items-center gap-2 px-4 py-2 rounded-full transition-all font-medium text-sm hover:bg-neutral-100 text-neutral-800 outline-1"
+                className="flex items-center gap-2 px-4 py-2 rounded-full transition-all font-bold text-base hover:bg-neutral-100 text-neutral-800 outline-1"
               >
                 <Phone className="w-4 h-4" />
                 <span>+91 92882 02060</span>
@@ -104,7 +104,7 @@ export function Navbar() {
                 variant="primary"
                 size="md"
                 onClick={openWhatsApp}
-                className="shadow-elegant hover:shadow-luxury transition-all hover:scale-105"
+                className="shadow-elegant hover:shadow-luxury transition-all hover:scale-105 font-bold text-base px-6 py-2.5 h-auto"
               >
                 <User className="w-4 h-4 mr-2" />
                 Enquire Now

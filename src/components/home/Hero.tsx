@@ -121,7 +121,7 @@ function HeroCarousel() {
       onMouseLeave={startAutoScroll}
     >
       {/* Carousel */}
-      <div
+      {/* <div
         ref={scrollContainerRef}
         onScroll={checkScroll}
         className="flex gap-4 overflow-x-auto scroll-smooth px-2"
@@ -143,19 +143,19 @@ function HeroCarousel() {
             </p>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }
 
 export function Hero() {
   return (
-    <div className="relative min-h-0 sm:min-h-screen w-full overflow-hidden bg-gradient-to-br from-primary/5 via-white to-secondary/10">
+    <div className="relative min-h-0 sm:min-h-[80vh] w-full overflow-hidden bg-gradient-to-br from-primary/5 via-white to-secondary/10">
       {/* Background Pattern */}
       <div className="absolute inset-0 pattern-dots opacity-30" />
 
       {/* Floating Destination Cards (desktop & tablet only to keep mobile clean) */}
-      <div className="hidden md:block absolute inset-x-0 top-0 h-[520px] sm:h-[640px] lg:h-[760px] pointer-events-none">
+      <div className="hidden md:block absolute inset-x-0 top-0 h-[480px] sm:h-[580px] lg:h-[680px] pointer-events-none">
         <div className="relative w-full h-full">
           {floatingDestinations.map((destination, index) => (
             <div
@@ -166,7 +166,7 @@ export function Hero() {
               }}
             >
               <div
-                className={`relative ${destination.size} rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 border-2 border-white/40 ${
+                className={`relative ${destination.size} rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-105 border-2 border-white/40 ${
                   index % 2 === 0 ? "animate-float" : "animate-float-delayed"
                 }`}
                 style={{
@@ -187,12 +187,8 @@ export function Hero() {
           ))}
         </div>
       </div>
-
-      {/* Large decorative background elements */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-secondary/15 to-transparent rounded-full blur-3xl" />
-
-      <div className="relative z-10 container mx-auto flex flex-col justify-start sm:justify-center px-4 sm:px-6 md:px-8 pt-20 xs:pt-28 sm:pt-[calc(var(--navbar-height)+2rem)] md:pt-[calc(var(--navbar-height)+2rem)] pb-2 sm:pb-16 md:pb-24 min-h-0 sm:min-h-screen">
+// ... (omitting middle lines for brevity in instruction, will apply correctly)
+      <div className="relative z-10 container mx-auto flex flex-col justify-start px-4 sm:px-6 md:px-8 pt-7 xs:pt-20 sm:pt-[var(--navbar-height)] md:pt-[var(--navbar-height)] pb-2 sm:pb-12 md:pb-16 min-h-0 sm:min-h-[80vh]">
         <div className="max-w-3xl sm:max-w-6xl mx-auto text-center w-full">
           {/* Main Hero Content */}
           <div className="mb-6 sm:mb-10 md:mb-12 animate-fade-in-up">
