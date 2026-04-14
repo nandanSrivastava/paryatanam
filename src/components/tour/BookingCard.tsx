@@ -87,13 +87,13 @@ export function BookingCard({ tour }: BookingCardProps) {
           <label className="block text-xs font-bold uppercase text-gray-600 mb-3 tracking-wider">
             Type of Tour - Your Journey, Your Comfort
           </label>
-          <div className="grid grid-cols-2 gap-2">
+          <div className={cn("grid gap-2", Object.keys(packagePrices).length > 2 ? "grid-cols-2" : "grid-cols-1")}>
             {[
               { id: 'exclusive', label: 'Exclusive', sub: 'Elite Trip' },
               { id: 'premium', label: 'Premium', sub: 'High-quality experience' },
               { id: 'value', label: 'Value', sub: 'Better comfort' },
               { id: 'standard', label: 'Standard', sub: 'Budget travellers' },
-            ].map((pkg) => (
+            ].filter(pkg => packagePrices[pkg.id as keyof typeof packagePrices]).map((pkg) => (
               <button
                 key={pkg.id}
                 onClick={() => setPackageType(pkg.id as any)}
@@ -110,7 +110,7 @@ export function BookingCard({ tour }: BookingCardProps) {
                   </span>
                   {packageType === pkg.id && <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />}
                 </div>
-                <span className="text-sm font-bold text-gray-900">₹{packagePrices[pkg.id as keyof typeof packagePrices].toLocaleString()}</span>
+                <span className="text-sm font-bold text-gray-900">₹{packagePrices[pkg.id as keyof typeof packagePrices]?.toLocaleString()}</span>
                 <span className="text-[10px] text-gray-500 font-medium">→ {pkg.sub}</span>
               </button>
             ))}
@@ -118,26 +118,36 @@ export function BookingCard({ tour }: BookingCardProps) {
 
           {/* Tier Details if any */}
           {tour.tierDetails && tour.tierDetails[packageType] && (
-            <div className="mt-4 p-4 rounded-xl bg-neutral-50 border border-neutral-100 animate-in fade-in slide-in-from-top-2 duration-300">
-              <h4 className="text-[10px] font-bold text-primary uppercase tracking-wider mb-2">Package Inclusions:</h4>
-              <ul className="space-y-1.5">
-                {tour.tierDetails[packageType].map((detail, idx) => (
-                  <li key={idx} className="flex items-start gap-2 text-xs text-gray-600">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5 font-bold" />
-                    <span>{detail}</span>
-                  </li>
-                ))}
+            <div className="mt-5 animate-in fade-in slide-in-from-top-2 duration-300">
+              <h4 className="text-[11px] sm:text-xs font-bold text-primary uppercase tracking-wider mb-2.5 px-1">Package Inclusions:</h4>
+              <ul className="grid grid-cols-1 xs:grid-cols-2 gap-x-4 gap-y-2">
+                {tour.tierDetails[packageType].map((detail, idx) => {
+                  const hasEmoji = /\p{Emoji}/u.test(detail);
+                  const content = hasEmoji ? detail.replace(/\p{Emoji}\s*/u, '') : detail;
+                  const emoji = hasEmoji ? detail.match(/\p{Emoji}/u)?.[0] : null;
+
+                  return (
+                    <li key={idx} className="flex items-center gap-2.5 text-xs sm:text-[13px] text-gray-700 font-semibold py-0.5 px-1">
+                      {emoji ? (
+                        <span className="text-base shrink-0">{emoji}</span>
+                      ) : (
+                        <CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0" />
+                      )}
+                      <span className="leading-tight">{content}</span>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           )}
 
-          <button className="w-full mt-3 p-3 rounded-xl border-2 border-dashed border-gray-300 hover:border-primary hover:bg-primary/5 transition-all text-left group">
+          {/* <button className="w-full mt-3 p-3 rounded-xl border-2 border-dashed border-gray-300 hover:border-primary hover:bg-primary/5 transition-all text-left group">
              <div className="flex items-center justify-between">
                <span className="text-xs font-bold uppercase text-gray-500 group-hover:text-primary transition-colors">Customize Your Package</span>
                <ArrowRight className="w-3 h-3 text-gray-400 group-hover:text-primary transition-colors" />
              </div>
              <p className="text-[10px] text-gray-500 mt-0.5">Enter travel preferences for personalized itinerary</p>
-          </button>
+          </button> */}
         </div>
 
         {/* Date Selector */}
