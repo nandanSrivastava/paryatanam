@@ -471,128 +471,136 @@ export const tourPackages: TourPackage[] = [
   },
   {
     id: "valmikinagar-family-escape",
-    slug: "valmikinagar-family-escape",
-    title: "Valmikinagar Family Escape",
-    subtitle: "2D/1N 1 Day in Valmikinagar 1 Day Nepal Border Circuit",
-    location: "Valmikinagar & Nepal Border",
-    duration: "2D/1N",
-    minPeople: "Max. 6 persons",
-    price: 33999,
-    originalPrice: 38999,
-    perPersonPrice: 5999,
+    slug: "pokhara-family-tour",
+    title: "Pokhara Family & Group Tour",
+    subtitle: "3D/2N Family Adventure - Manakamana & Pokhara Lakes",
+    location: "Pokhara, Nepal",
+    duration: "3D/2N",
+    minPeople: "Min. 6 Persons",
+    price: 13999,
+    originalPrice: 19999,
+    perPersonPrice: 13999,
     rating: 4.9,
     reviews: 156,
     images: [
       "/images/package/family.png",
-      "/images/destinations/paryatanam-indo-nepal-package.jpeg",
-      "https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1544255712-4c6e945c7964?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1526481280693-3bfa756150f1?q=80&w=2070&auto=format&fit=crop",
       "https://tourism.bihar.gov.in/content/dam/bihar-tourism/images/category_a/west_champaran/valmiki_tiger_reserve/wildlife_west_champaran_category_a_valmiki_tiger_reserve_pic_02.jpg?q=80&w=2070&auto=format&fit=crop"
     ],
-    description: "Discover the spiritual and natural charm of Valmikinagar and the nearby Nepal border region, where sacred temples, lush forests, and peaceful river landscapes create a truly enriching experience. Visit revered sites like Valmiki Ashram Dham, Maa Nardevi Temple, and Jatashankar Dham, Kawleshwar Dham followed by spiritual excursions to Triveni Dham and Gajendra Moksha Dham in Nepal. Along with spiritual exploration, enjoy refreshing experiences such as jungle safari, hanging bridge walks, Kawleshwar Jhula, Eco-Park and a calming riverside stroll along the Gandak River. This tour offers a perfect blend of devotion, nature, and relaxation in a short yet memorable journey.",
+    description: "Experience the ultimate family getaway to Pokhara. Our 3-day journey combines comfort and adventure, traveling in a private Scorpio. From the sacred Manakamana Cable Car experience to the serene beauty of Phewa Lake and the sunrise at Sarangkot, every moment is crafted for family bonding and joyful memories in the heart of Nepal.",
     highlights: [
-      "Transport Included Indo-Nepal",
-      "Stay Included",
-      "All Meals Included",
-      "Sightseeing Included",
-      "Sightseeing tickets included",
-      "Boat Safari Included",
-      "Jungle Safari Included",
-      "Safe & Secure",
-      "Fully Privacy",
-      "Private AC Room",
-      "Personal Guide"
+      "Manakamana Temple via Cable Car",
+      "Fewa Lake Side Night View",
+      "Full Day Pokhara Sightseeing",
+      "Sarangkot Sunrise Experience",
+      "Pumdikot Shiva Statue & Peace Pagoda",
+      "Private Scorpio for Entire Trip",
+      "Safe & Secure Family Environment"
     ],
     inclusions: [
-      "Pickup & drop as per itinerary",
-      "Stay Included – Resort / Luxury Hotel (3-Star equivalent standards)",
-      "Mild Tea/Coffee as per itinerary",
-      "Meals Included – Breakfast, Lunch & Dinner",
-      "Transport Included",
-      "Sightseeing Included",
-      "Spiritual & cultural sightseeing including: Maa Nardevi Temple, Jatashankar Dham, Kawaleshwar Dham, Valmiki Ashram Dham, Gandak Dam View Point, Triveni Sangam Dham, Gajendra Moksha Dham, Seesh Mahal, 1+ Hidden Spiritual Location",
-      "Boat Safari Included (Subject to local/govt regulations)",
-      "Wild Jungle Safari Included (Subject to local/govt regulations)",
-      "Kawalsher Jhula",
-      "Hanging Bridge Nepal side",
-      "Eco-Park visit",
-      "Riverside walk along Gandak River"
+      "Pick & Drop from Valmikinagar via Private Scorpio",
+      "Local Sightseeing in private vehicle",
+      "Daily Breakfast & Dinner",
+      "Premium / 3-Star Resort Stay",
+      "Manakamana Cable Car Tickets",
+      "Sightseeing Entry Tickets",
+      "One Adventure Activity Included",
+      "Professional Driver & Tour Assistance"
     ],
     exclusions: [
-      "Personal expenses such as shopping, tips, telephone calls, laundry, etc.",
-      "Meals not mentioned under the Inclusions section",
-      "Camera or video fees at sightseeing places (if applicable)",
-      "Travel insurance",
-      "GST and applicable taxes",
-      "Bonfire expenses (if requested)",
-      "Bus stop pickup and drop (only available at common group timing)",
-      "Room service and restaurant expenses at the hotel",
-      "Adventure activities or optional activities not mentioned in the itinerary",
-      "Alcoholic beverages, soft drinks, mineral water, or other beverages",
-      "Transport services apart from those mentioned in the itinerary",
-      "Any costs arising due to unforeseen circumstances such as landslides, bad weather, etc.",
+      "Any Adventure Activities beyond the one included",
+      "Personal expenses (shopping, laundry, phone calls)",
+      "Travel insurance, medical expenses, or emergency evacuation",
+      "Lunch and any meals not mentioned in inclusions",
       "Anything not specifically mentioned under 'Inclusions'"
     ],
     stayDetails: [
-      "1 night stay in Resort / Luxury Hotel (3-Star equivalent standards)",
-      "Comfortable rooms with modern amenities",
-      "Meals (as per selected package)"
+      "2 Nights stay in Premium Hotel / 3-Star Resort in Pokhara",
+      "Family-friendly interconnected or luxury rooms",
+      "Daily Breakfast & Dinner included"
     ],
     knowBeforeYouGo: [
-      "Prices may vary during peak seasons, long weekends, and festivals.",
-      "Valid government ID proof is mandatory for all travelers.",
-      "Indian citizens should carry a valid ID for Nepal border visits.",
-      "Timely reporting and punctual departures are important.",
-      "The tour passes through forest and eco-sensitive zones; please avoid littering.",
-      "Carry comfortable clothing, walking shoes, sunscreen, and drinking water.",
-      "Photography at religious sites may be restricted; follow guidelines.",
-      "Maintain silence and decorum at spiritual sites.",
-      "Check-in and check-out timings are as per hotel policy.",
-      "The itinerary may be modified due to weather or forest regulations."
+      "Carry valid Indian ID proof (Voter ID or Passport) for border crossing.",
+      "Kids Pricing: 3-5 years (₹6,999 - ₹7,999), Under 3 years (Free).",
+      "Booking requires 30% advance for confirmation.",
+      " Indian citizens should carry a valid ID for Nepal border visits.",
+      "The tour passes through beautiful mountain terrain; carry light woolens.",
+      "Itinerary flow may change based on weather or forest permissions."
     ],
     importantNote: "The itinerary may be modified due to weather conditions, forest regulations, or local circumstances for guest safety and a smooth travel experience.",
     itinerary: [
       {
         day: 1,
-        title: "Valmikinagar Exploration",
+        title: "Departure & Manakamana",
         schedule: [
-          { time: "Morning", activity: "Milk Tea / Milk Coffee & Breakfast" },
-          { time: "Morning", activity: "Temple visits (Maa Nardevi, Jatashankar, Kawaleshwar, Valmiki Ashram Dham)" },
-          { time: "Afternoon", activity: "Hanging Bridge & Lunch" },
-          { time: "Evening", activity: "Kawleshwar Jhula & Eco-Park" },
-          { time: "Sunset", activity: "Riverside Walk (Gandak River)" },
-          { time: "Night", activity: "Check-in at Resort / Luxury Hotel & Dinner" }
+          { time: "Morning", activity: "Departure from Valmikinagar via Private Scorpio" },
+          { time: "Midday", activity: "Manakamana Temple visit (Cable Car Experience)" },
+          { time: "Afternoon", activity: "Continue journey to Pokhara" },
+          { time: "Evening", activity: "Arrival in Pokhara & Lakeside Walk (Fewa Lake)" },
+          { time: "Night", activity: "Hotel Check-in & Dinner" }
         ],
         inclusions: [
-          "Spiritual Sightseeing",
-          "Eco-Park & Riverside Walk",
+          "Private Transport",
+          "Cable Car Entry",
           "Stay & Dinner"
         ]
       },
       {
         day: 2,
-        title: "Valmikinagar Exploration",
+        title: "Pokhara Sightseeing",
         schedule: [
-          { time: "Morning", activity: "Milk Tea / Milk Coffee" },
-          { time: "Morning", activity: "Jungle Safari & Breakfast" },
-          { time: "Morning", activity: "Triveni Dham visit" },
-          { time: "Late Morning", activity: "Gajendra Moksha Dham" },
-          { time: "Afternoon", activity: "Shish Mahal exploration & Lunch" },
-          { time: "Evening", activity: "Hanging Bridge & sightseeing" },
-          { time: "Night", activity: "Return drop" }
+          { time: "Morning", activity: "Breakfast at Hotel" },
+          { time: "Morning", activity: "Davis Falls, Gupteshwor Cave & Tal Barahi" },
+          { time: "Afternoon", activity: "World Peace Pagoda & Pumdikot Shiva Statue" },
+          { time: "Evening", activity: "Bindhyabasini Temple & local market" },
+          { time: "Night", activity: "Dinner & Overnight stay" }
         ],
         inclusions: [
-          "Jungle Safari",
-          "Nepal Border Spiritual Circuit",
+          "Full Day Sightseeing",
+          "Boating Tickets",
+          "Stay & Dinner"
+        ]
+      },
+      {
+        day: 3,
+        title: "Sarangkot Sunrise & Return",
+        schedule: [
+          { time: "Dawn", activity: "Sunrise visit to Sarangkot" },
+          { time: "Morning", activity: "Breakfast & Hotel Check-out" },
+          { time: "Afternoon", activity: "Return journey to Valmikinagar" },
+          { time: "Evening", activity: "Drop-off at Valmikinagar" }
+        ],
+        inclusions: [
+          "Sunrise Excursion",
           "Return Transfer"
         ]
       }
     ],
     categoryId: "family-trip",
     tierPrices: {
-      standard: 33999,
-      value: 34999,
-      premium: 38999,
-      exclusive: 47999
+      value: 83994,
+      premium: 113994
+    },
+    tierDetails: {
+      value: [
+        "🚗 Border Transfers",
+        "🏔️ Local Sightseeing",
+        "🍱 Breakfast & Dinner",
+        "🏨 Premium Hotel",
+        "🎟️ Entry Tickets",
+        "🚠 Cable Car Tickets",
+        "🛶 Adventure Activity"
+      ],
+      premium: [
+        "🚗 Border Transfers",
+        "🏔️ Local Sightseeing",
+        "🍱 Breakfast & Dinner",
+        "🏰 3-Star Resort",
+        "🎟️ Entry Tickets",
+        "🚠 Cable Car Tickets",
+        "🛶 Adventure Activity"
+      ]
     }
   },
   {
