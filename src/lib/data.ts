@@ -109,6 +109,12 @@ export const tourCategories: TourCategory[] = [
     description: "Visit the most famous landmarks and views.",
     icon: "Camera",
   },
+  {
+    id: "group-trip",
+    title: "Group Trip",
+    description: "Exciting adventures for large groups and friends.",
+    icon: "Users2",
+  },
 ];
 export const tourPackages: TourPackage[] = [
   {
@@ -734,6 +740,129 @@ export const tourPackages: TourPackage[] = [
         "🎟 All Sightseeing Entry Tickets Included",
         "🍪 Evening Snacks & Refreshments",
         "🌏 India – Nepal Border Visit Experience"
+      ]
+    }
+  },
+  {
+    id: "pokhara-group-tour",
+    slug: "pokhara-group-tour",
+    title: "Pokhara Group Value Trip",
+    subtitle: "3D/2N Special - Budget-friendly Group Adventure",
+    location: "Pokhara, Nepal",
+    duration: "3D/2N",
+    minPeople: "Min. 24 Persons",
+    price: 12999,
+    originalPrice: 17999,
+    perPersonPrice: 12999,
+    rating: 4.8,
+    reviews: 142,
+    images: [
+      "https://images.unsplash.com/photo-1544255712-4c6e945c7964?q=80&w=2070&auto=format&fit=crop", // Phewa Lake
+      "https://images.unsplash.com/photo-1610483833215-6809dc39199c?q=80&w=2070&auto=format&fit=crop", // Manakamana Cable Car context
+      "https://images.unsplash.com/photo-1526481280693-3bfa756150f1?q=80&w=2070&auto=format&fit=crop", // World Peace Pagoda
+      "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=2070&auto=format&fit=crop"  // Sarangkot Sunrise
+    ],
+    description: "Our 'Group Value Trip' to Pokhara is designed for large groups who want to experience the best of Nepal without breaking the bank. Traveling together simplifies logistics and amplifies the fun. From group outings at Phewa Lake to a unified experience at the Manakamana Cable Car, this trip ensures a smooth, safe, and culturally rich journey for everyone involved.",
+    highlights: [
+      "Manakamana Temple via Cable Car",
+      "Pokhara City Sightseeing Tour",
+      "Phewa Lake & Tal Barahi Visit",
+      "World Peace Pagoda Panoramic Views",
+      "Comfortable Quad-Room Sharing",
+      "Dedicated Group Transport (Nepal Side)",
+      "Secure & Professional Management"
+    ],
+    inclusions: [
+      "Pick & Drop from Valmikinagar",
+      "Local Sightseen in Nepal via Group Coach",
+      "Meals: Daily Breakfast & Dinner",
+      "Stay in Quad-Sharing Hotel Rooms",
+      "Manakamana Cable Car Entry",
+      "All Sightseeing Entry Tickets",
+      "One Group Adventure Activity",
+      "Safe & Secure with Local Assistance"
+    ],
+    exclusions: [
+      "Any Adventure Activities beyond the one included",
+      "Personal expenses (shopping, private transfers)",
+      "Travel insurance or emergency medical evacuation",
+      "Lunch and snacks not mentioned in inclusions",
+      "Anything not mentioned under 'Inclusions'"
+    ],
+    stayDetails: [
+      "2 Nights stay in Budget-Friendly Verified Hotels",
+      "Quad-Sharing (4 persons per room) arrangement",
+      "Clean rooms with essential amenities"
+    ],
+    knowBeforeYouGo: [
+      "Group minimum requirement: 24 persons for this special pricing.",
+      "Carry valid Indian ID proof for border formalities.",
+      "Payments: 30% advance, balance 70% before trip start.",
+      "Kids: 3-5 years (₹6,599), Under 3 years (Free).",
+      "Punctuality is key for group sightseeing efficiency.",
+      "The itinerary flow is optimized for large group movements."
+    ],
+    importantNote: "The itinerary may be modified due to weather conditions, forest regulations, or local circumstances for guest safety and a smooth group experience.",
+    itinerary: [
+      {
+        day: 1,
+        title: "Journey to the Lake City",
+        schedule: [
+          { time: "Morning", activity: "Departure from Valmikinagar" },
+          { time: "Midday", activity: "Manakamana Temple visit (Cable Car)" },
+          { time: "Evening", activity: "Arrival in Pokhara & Lakeside Relaxation" },
+          { time: "Night", activity: "Hotel Check-in & Group Dinner" }
+        ],
+        inclusions: [
+          "Group Transportation",
+          "Cable Car Access",
+          "Quad-Share Stay"
+        ]
+      },
+      {
+        day: 2,
+        title: "Pokhara Sightseeing",
+        schedule: [
+          { time: "Morning", activity: "Breakfast at Hotel" },
+          { time: "Morning", activity: "Davis Falls, Gupteshwor Cave & Bindhyabasini" },
+          { time: "Noon", activity: "Phewa Lake Boating Experience" },
+          { time: "Afternoon", activity: "World Peace Pagoda & Pumdikot Shiva Statue" },
+          { time: "Night", activity: "Group Dinner & Interaction Session" }
+        ],
+        inclusions: [
+          "Full Day Local Sightseeing",
+          "Boating Expense",
+          "Stay & Dinner"
+        ]
+      },
+      {
+        day: 3,
+        title: "Sarangkot & Return",
+        schedule: [
+          { time: "Dawn", activity: "Optional Sunrise visit to Sarangkot" },
+          { time: "Morning", activity: "Breakfast & Wrap-up" },
+          { time: "Midday", activity: "Check-out and return journey" },
+          { time: "Evening", activity: "Arrival at Valmikinagar" }
+        ],
+        inclusions: [
+          "Breakfast",
+          "Return Transfer"
+        ]
+      }
+    ],
+    categoryId: "group-trip",
+    tierPrices: {
+      value: 311976
+    },
+    tierDetails: {
+      value: [
+        "🚌 Group Transfers",
+        "🏔️ Local Sightseeing",
+        "🍱 Breakfast & Dinner",
+        "🏨 Quad-Sharing Stay",
+        "🎟️ Entry Tickets",
+        "🚠 Cable Car Tickets",
+        "🛶 Adventure Activity"
       ]
     }
   },
